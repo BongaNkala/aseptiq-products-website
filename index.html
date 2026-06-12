@@ -6,6 +6,7 @@
     <title>Aseptiq Products RSA - Premium Cleaning Solutions</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ai-bar.css">
 </head>
 <body>
     <!-- Header -->
@@ -26,19 +27,19 @@
         </div>
     </header>
 
-    <!-- Hero Section with Video Background -->
+    <!-- Hero Section with Video Background - Content at Bottom Left -->
     <section id="home" class="hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="images/ASEPTIQ_logo_reveal.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h2>Professional Cleaning Solutions for South Africa</h2>
-                <p>Powerful, eco-friendly, and effective cleaning products for homes, businesses, and industries.</p>
-                <a href="#products" class="btn-primary">Shop Now</a>
-            </div>
+        
+        <!-- Hero content positioned at bottom-left -->
+        <div class="hero-content-bottom">
+            <h2>Professional Cleaning Solutions for South Africa</h2>
+            <p>Powerful, eco-friendly, and effective cleaning products for homes, businesses, and industries.</p>
+            <a href="#products" class="btn-primary">Shop Now</a>
         </div>
     </section>
 
@@ -170,10 +171,23 @@
                     <p>⏰ Hours: Mon-Fri 8:00 - 17:00</p>
                 </div>
                 <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn-primary">Send Message</button>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us how we can help you..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message ✨</button>
                 </form>
             </div>
         </div>
