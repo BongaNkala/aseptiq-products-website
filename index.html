@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aseptiq Products RSA - Premium Cleaning Solutions</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ai-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/ai-bar.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header with Cart Icon -->
     <header>
         <div class="container">
             <div class="logo">
@@ -24,10 +24,16 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <!-- Cart Icon moved to header -->
+            <div class="header-cart">
+                <button class="cart-icon-header" onclick="toggleCart()">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section with Video Background - Content at Bottom Left -->
+    <!-- Hero Section with Video Background -->
     <section id="home" class="hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="images/ASEPTIQ_logo_reveal.mp4" type="video/mp4">
@@ -35,7 +41,7 @@
         </video>
         <div class="hero-overlay"></div>
         
-        <!-- Hero content positioned at bottom-left -->
+        <!-- Hero content at bottom-left -->
         <div class="hero-content-bottom">
             <h2>Professional Cleaning Solutions for South Africa</h2>
             <p>Powerful, eco-friendly, and effective cleaning products for homes, businesses, and industries.</p>
@@ -127,10 +133,6 @@
     </div>
 
     <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
-
-    <button class="cart-icon" onclick="toggleCart()">
-        🛒 <span id="cartCount">0</span>
-    </button>
 
     <!-- About Section -->
     <section id="about" class="about">
