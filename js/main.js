@@ -185,3 +185,59 @@ style.textContent = `
 document.head.appendChild(style);
 
 console.log('Aseptiq Products RSA website loaded successfully!');
+
+// Updated function to handle size selection with separate price display
+function selectAluminiumSize(price, size, button) {
+    // Remove active class from all size buttons
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    
+    // Add active class to clicked button
+    button.classList.add('active');
+    
+    // Update price display (separate from size button)
+    const priceDiv = document.getElementById('aluminiumPrice');
+    if (priceDiv) {
+        priceDiv.textContent = `R${price.toFixed(2)}`;
+    }
+    
+    // Update global variables
+    currentAluminiumPrice = price;
+    currentAluminiumSize = size;
+    
+    // Optional: Show feedback
+    showNotification(`Size changed to ${size} - R${price.toFixed(2)}`);
+}
+
+// Fix for size selection - update price display
+function selectAluminiumSize(price, size, button) {
+    // Remove active class from all size buttons
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    
+    // Add active class to clicked button
+    button.classList.add('active');
+    
+    // Update the price display
+    const priceElement = document.getElementById('aluminiumPrice');
+    if (priceElement) {
+        priceElement.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    // Store current selection for add to cart
+    window.currentAluminiumPrice = price;
+    window.currentAluminiumSize = size;
+    
+    // Show feedback
+    if (typeof showNotification === 'function') {
+        showNotification(`✓ ${size} selected - R${price.toFixed(2)}`);
+    }
+}
+
+// Make sure variables are initialized
+if (typeof window.currentAluminiumPrice === 'undefined') {
+    window.currentAluminiumPrice = 349.99;
+    window.currentAluminiumSize = '1 Litre';
+}
