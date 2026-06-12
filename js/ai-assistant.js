@@ -1,59 +1,59 @@
-// AI Assistant for Aseptiq Products RSA
+// Premium AI Assistant for Aseptiq Products RSA
 let assistantOpen = false;
 
-// Product database for AI context
+// Product database
 const productsDatabase = {
     "aluminium polish/wax": {
-        name: "Aluminium Polish/Wax",
+        name: "✨ Aluminium Polish/Wax",
         price: "R349.99",
         size: "1 Litre",
-        uses: ["Aluminium windows", "Kingdom doors", "Burglar bars", "Gates", "Aluminium frames"],
-        howToUse: "1. Clean surface from dirt. 2. Apply small amount to soft cloth. 3. Rub in circular motion. 4. Buff with clean dry cloth.",
-        bestFor: "Restoring faded aluminium surfaces, removing oxidation, adding protective shine"
+        description: "Premium formula for restoring faded aluminium surfaces",
+        uses: ["Aluminium windows", "Kingdom doors", "Burglar bars", "Gates"],
+        howToUse: "1. Clean surface thoroughly\n2. Apply small amount to soft cloth\n3. Rub in circular motion\n4. Buff with clean dry cloth for mirror shine",
+        bestFor: "Restoring faded aluminium, removing oxidation, adding protective layer"
     },
     "glass cleaner": {
-        name: "Streak-Free Glass Cleaner",
+        name: "💎 Streak-Free Glass Cleaner",
         price: "R89.99",
         size: "500ml",
-        uses: ["Windows", "Mirrors", "Glass tables", "Glass shower doors"],
-        howToUse: "1. Spray on glass surface. 2. Wipe with microfiber cloth. 3. Buff for streak-free finish.",
-        bestFor: "Streak-free shine on all glass surfaces"
+        uses: ["Windows", "Mirrors", "Glass tables"],
+        howToUse: "1. Spray on surface\n2. Wipe with microfiber cloth\n3. Buff for crystal clear finish",
+        bestFor: "Streak-free brilliance on all glass surfaces"
     },
     "floor cleaner": {
-        name: "Heavy-Duty Floor Cleaner",
+        name: "🪨 Heavy-Duty Floor Cleaner",
         price: "R129.99",
         size: "1 Litre",
-        uses: ["Tiles", "Marble", "Hardwood floors", "Laminate", "Vinyl"],
-        howToUse: "1. Dilute 50ml per 5L water. 2. Mop floor. 3. No rinsing required.",
-        bestFor: "All floor types, removing tough dirt without damaging finish"
+        uses: ["Tiles", "Marble", "Hardwood", "Laminate"],
+        howToUse: "1. Dilute 50ml per 5L water\n2. Mop floor\n3. No rinsing needed",
+        bestFor: "Professional cleaning for all floor types"
     },
     "bathroom cleaner": {
-        name: "Anti-Bacterial Bathroom Cleaner",
+        name: "🛁 Anti-Bacterial Bathroom Cleaner",
         price: "R99.99",
         size: "750ml",
-        uses: ["Toilets", "Sinks", "Showers", "Tiles", "Baths"],
-        howToUse: "1. Spray on surface. 2. Wait 2-3 minutes. 3. Scrub and rinse.",
-        bestFor: "Removing limescale, soap scum, and killing 99.9% of bacteria"
+        uses: ["Toilets", "Sinks", "Showers", "Tiles"],
+        howToUse: "1. Spray on surface\n2. Wait 2-3 minutes\n3. Scrub and rinse",
+        bestFor: "Removing limescale, soap scum, killing bacteria"
     },
     "degreaser": {
-        name: "Industrial Degreaser",
+        name: "🔥 Industrial Degreaser",
         price: "R179.99",
         size: "1 Litre",
-        uses: ["Kitchens", "Stove tops", "Exhaust fans", "Garage floors", "Engine parts"],
-        howToUse: "1. Apply directly to grease. 2. Let sit for 2 minutes. 3. Wipe or rinse.",
-        bestFor: "Heavy grease and oil removal in industrial settings"
+        uses: ["Kitchens", "Stoves", "Garages", "Engines"],
+        howToUse: "1. Apply directly to grease\n2. Let sit 2 minutes\n3. Wipe or rinse",
+        bestFor: "Heavy-duty grease and oil removal"
     },
     "sanitizer": {
-        name: "Alcohol-Based Hand Sanitizer",
+        name: "🧴 Alcohol-Based Hand Sanitizer",
         price: "R49.99",
         size: "500ml",
-        uses: ["Hands", "Surfaces", "Door handles", "High-touch areas"],
-        howToUse: "1. Apply palm-sized amount. 2. Rub hands together. 3. Let air dry.",
-        bestFor: "Quick hand disinfection when soap and water unavailable"
+        uses: ["Hands", "Surfaces", "High-touch areas"],
+        howToUse: "1. Apply palm-sized amount\n2. Rub hands together\n3. Let air dry",
+        bestFor: "Quick disinfection, 99.9% germ kill"
     }
 };
 
-// Initialize AI Assistant
 function initAIAssistant() {
     const aiHTML = `
         <div id="aiAssistant" class="ai-assistant">
@@ -62,28 +62,24 @@ function initAIAssistant() {
             </div>
             <div id="aiWindow" class="ai-window">
                 <div class="ai-header">
-                    <h3>🤖 Aseptiq AI Assistant</h3>
-                    <button onclick="toggleAIAssistant()">✕</button>
+                    <h3>✨ Aseptiq AI Luxury Assistant ✨</h3>
+                    <button onclick="toggleAIAssistant()" style="background:none; border:none; color:white; font-size:24px; cursor:pointer;">✕</button>
                 </div>
                 <div class="ai-messages" id="aiMessages">
                     <div class="ai-message bot">
-                        👋 <strong>Hello! I'm your Aseptiq AI Assistant.</strong><br><br>
-                        I can help you:<br>
-                        • Choose the right product for your cleaning needs<br>
-                        • Explain how to use our products<br>
-                        • Recommend solutions for specific stains<br>
-                        • Tell you where to buy our products<br><br>
-                        <strong>Try asking me:</strong><br>
-                        🔹 "How do I clean faded aluminium windows?"<br>
-                        🔹 "What's best for glass streaks?"<br>
-                        🔹 "I have tough grease on my stove"<br>
-                        🔹 "Where can I buy your products?"<br>
-                        🔹 "Show me all prices"
+                        👑 <strong>Welcome to Aseptiq Luxury Care</strong> 👑<br><br>
+                        I'm your personal cleaning concierge. How may I assist you today?<br><br>
+                        💎 <strong>Quick suggestions:</strong><br>
+                        • "How do I restore faded aluminium?"<br>
+                        • "Best product for glass streaks?"<br>
+                        • "Remove tough kitchen grease"<br>
+                        • "Where to buy your products?"<br>
+                        • "Show me all premium products"
                     </div>
                 </div>
-                <div class="ai-input">
-                    <input type="text" id="aiUserInput" placeholder="Ask me about our products..." onkeypress="handleAIKeyPress(event)">
-                    <button onclick="sendAIMessage()">Send 📤</button>
+                <div class="ai-input-area">
+                    <input type="text" id="aiUserInput" placeholder="Ask me anything about our products... ✨" onkeypress="handleAIKeyPress(event)">
+                    <button onclick="sendAIMessage()">Send 💎</button>
                 </div>
             </div>
         </div>
@@ -110,19 +106,16 @@ function sendAIMessage() {
     
     if (!userMessage) return;
     
-    // Add user message to chat
     addMessage(userMessage, 'user');
     inputField.value = '';
     
-    // Show typing indicator
     showTypingIndicator();
     
-    // Get AI response (simulate thinking for realism)
     setTimeout(() => {
         const response = getAIResponse(userMessage);
         removeTypingIndicator();
         addMessage(response, 'bot');
-    }, 500);
+    }, 600);
 }
 
 function addMessage(text, sender) {
@@ -139,7 +132,7 @@ function showTypingIndicator() {
     const typingDiv = document.createElement('div');
     typingDiv.className = 'ai-message bot typing-indicator';
     typingDiv.id = 'typingIndicator';
-    typingDiv.innerHTML = '🤖 Aseptiq AI is thinking<span>.</span><span>.</span><span>.</span>';
+    typingDiv.innerHTML = '💎 Aseptiq AI is crafting your response<span>.</span><span>.</span><span>.</span>';
     messagesContainer.appendChild(typingDiv);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
@@ -149,115 +142,65 @@ function removeTypingIndicator() {
     if (indicator) indicator.remove();
 }
 
-function getAIResponse(userQuestion) {
-    const question = userQuestion.toLowerCase();
+function getAIResponse(question) {
+    const q = question.toLowerCase();
     
-    // Product recommendation logic based on keywords
-    if (question.includes('aluminium') || (question.includes('faded') && question.includes('window')) || (question.includes('door') && question.includes('frame'))) {
-        return `🔧 <strong>${productsDatabase["aluminium polish/wax"].name} - ${productsDatabase["aluminium polish/wax"].price}</strong><br><br>
-📦 Size: ${productsDatabase["aluminium polish/wax"].size}<br><br>
-<strong>✨ This is the BEST product for your needs!</strong><br><br>
-<strong>📝 How to use:</strong><br>${productsDatabase["aluminium polish/wax"].howToUse}<br><br>
-<strong>🎯 Best for:</strong> ${productsDatabase["aluminium polish/wax"].bestFor}<br><br>
-📍 <strong>Where to buy:</strong> Available at our Soweto store (88 Mmila Road) or call +27 67 739 6525 for delivery!`;
+    if (q.includes('aluminium') || q.includes('faded')) {
+        const p = productsDatabase["aluminium polish/wax"];
+        return `✨ <strong>${p.name}</strong> - ${p.price}<br><br>
+📦 Size: ${p.size}<br>
+💎 ${p.description}<br><br>
+<strong>📝 How to use:</strong><br>${p.howToUse}<br><br>
+<strong>🎯 Perfect for:</strong> ${p.bestFor}<br><br>
+📍 Available at our premium store or for delivery. Call +27 67 739 6525!`;
     }
     
-    if (question.includes('glass') || question.includes('window') && question.includes('clean') || question.includes('mirror') || question.includes('streak')) {
-        return `✨ <strong>${productsDatabase["glass cleaner"].name} - ${productsDatabase["glass cleaner"].price}</strong><br><br>
-📦 Size: ${productsDatabase["glass cleaner"].size}<br><br>
-<strong>📝 How to use:</strong><br>${productsDatabase["glass cleaner"].howToUse}<br><br>
-<strong>🎯 Best for:</strong> ${productsDatabase["glass cleaner"].bestFor}<br><br>
-📍 Available now! Call +27 67 739 6525 to place your order.`;
+    if (q.includes('glass') || q.includes('streak') || q.includes('window')) {
+        const p = productsDatabase["glass cleaner"];
+        return `💎 <strong>${p.name}</strong> - ${p.price}<br><br>
+📦 Size: ${p.size}<br>
+<strong>📝 How to use:</strong><br>${p.howToUse}<br><br>
+<strong>✨ Result:</strong> Crystal clear, streak-free brilliance!`;
     }
     
-    if (question.includes('floor') || question.includes('tile') || question.includes('marble') || question.includes('wood') || question.includes('laminate')) {
-        return `🧹 <strong>${productsDatabase["floor cleaner"].name} - ${productsDatabase["floor cleaner"].price}</strong><br><br>
-📦 Size: ${productsDatabase["floor cleaner"].size}<br><br>
-<strong>📝 How to use:</strong><br>${productsDatabase["floor cleaner"].howToUse}<br><br>
-<strong>🎯 Best for:</strong> ${productsDatabase["floor cleaner"].bestFor}<br><br>
-📍 Safe for all floor surfaces. Order today for nationwide delivery!`;
+    if (q.includes('grease') || q.includes('degreaser') || q.includes('stove')) {
+        const p = productsDatabase.degreaser;
+        return `🔥 <strong>${p.name}</strong> - ${p.price}<br><br>
+📦 Size: ${p.size}<br>
+<strong>⚡ Power:</strong> Industrial strength, cuts through toughest grease<br><br>
+<strong>📝 How to use:</strong><br>${p.howToUse}`;
     }
     
-    if (question.includes('bathroom') || question.includes('toilet') || question.includes('shower') || question.includes('limescale') || question.includes('soap scum') || question.includes('tiles')) {
-        return `🚽 <strong>${productsDatabase["bathroom cleaner"].name} - ${productsDatabase["bathroom cleaner"].price}</strong><br><br>
-📦 Size: ${productsDatabase["bathroom cleaner"].size}<br><br>
-<strong>📝 How to use:</strong><br>${productsDatabase["bathroom cleaner"].howToUse}<br><br>
-<strong>🎯 Best for:</strong> ${productsDatabase["bathroom cleaner"].bestFor}<br><br>
-📍 Kills 99.9% of bacteria. Perfect for bathrooms!`;
+    if (q.includes('where') || q.includes('buy') || q.includes('location')) {
+        return `📍 <strong>Aseptiq Luxury Showroom</strong><br><br>
+🏪 Address: 88 Mmila Road, Soweto, 1868<br>
+📞 Phone: +27 (0) 67 739 6525<br>
+💬 WhatsApp: 087 938 6526<br>
+✉️ Email: info@aseptiqproducts.co.za<br><br>
+🚚 <strong>Premium Delivery Service:</strong> Free delivery on orders over R500!`;
     }
     
-    if (question.includes('grease') || question.includes('degreaser') || question.includes('oil') || question.includes('stove') || question.includes('kitchen') || question.includes('cooking')) {
-        return `🍳 <strong>${productsDatabase.degreaser.name} - ${productsDatabase.degreaser.price}</strong><br><br>
-📦 Size: ${productsDatabase.degreaser.size}<br><br>
-<strong>📝 How to use:</strong><br>${productsDatabase.degreaser.howToUse}<br><br>
-<strong>🎯 Best for:</strong> ${productsDatabase.degreaser.bestFor}<br><br>
-📍 Professional strength for tough kitchen and industrial jobs.`;
+    if (q.includes('price') || q.includes('cost')) {
+        return `💰 <strong>Our Premium Collection Prices:</strong><br><br>
+✨ Aluminium Polish/Wax: R349.99<br>
+💎 Glass Cleaner: R89.99<br>
+🪨 Floor Cleaner: R129.99<br>
+🛁 Bathroom Cleaner: R99.99<br>
+🔥 Industrial Degreaser: R179.99<br>
+🧴 Hand Sanitizer: R49.99<br><br>
+💼 <strong>Bulk discounts available!</strong> Contact us for corporate pricing.`;
     }
     
-    if (question.includes('sanitizer') || question.includes('hand') || question.includes('germ') || question.includes('virus') || question.includes('covid')) {
-        return `🧴 <strong>${productsDatabase.sanitizer.name} - ${productsDatabase.sanitizer.price}</strong><br><br>
-📦 Size: ${productsDatabase.sanitizer.size}<br><br>
-<strong>📝 How to use:</strong><br>${productsDatabase.sanitizer.howToUse}<br><br>
-<strong>🎯 Best for:</strong> ${productsDatabase.sanitizer.bestFor}<br><br>
-📍 75% alcohol - kills 99.9% of germs instantly. Perfect for on-the-go!`;
-    }
-    
-    if (question.includes('stain') || question.includes('spill') || question.includes('dirty') || question.includes('mark')) {
-        return `🔍 <strong>Let me help you with stains!</strong><br><br>
-For the best advice, please tell me:<br>
-• 📍 What type of surface? (floor, glass, aluminium, bathroom, etc.)<br>
-• 🎨 What caused the stain? (grease, water marks, oxidation, soap scum)<br>
-• ⏰ How old is the stain?<br><br>
-Then I can recommend the PERFECT product for your specific situation! 💪`;
-    }
-    
-    if (question.includes('where') || question.includes('buy') || question.includes('purchase') || question.includes('pickup') || question.includes('location')) {
-        return `📍 <strong>Where to get our products:</strong><br><br>
-• 🏪 <strong>Store Pickup:</strong> 88 Mmila Road, Soweto, 1868<br>
-• 📞 <strong>Phone Order:</strong> +27 (0) 67 739 6525<br>
-• 💬 <strong>WhatsApp:</strong> 087 938 6526<br>
-• ✉️ <strong>Email:</strong> info@aseptiqproducts.co.za<br><br>
-🚚 <strong>We deliver nationwide!</strong> Free delivery on orders over R500.`;
-    }
-    
-    if (question.includes('price') || question.includes('cost') || question.includes('how much') || question.includes('prices')) {
-        return `💰 <strong>Our Product Prices:</strong><br><br>
-• 🔧 Aluminium Polish/Wax: <strong>R349.99</strong> (1 Litre)<br>
-• ✨ Glass Cleaner: <strong>R89.99</strong> (500ml)<br>
-• 🧹 Floor Cleaner: <strong>R129.99</strong> (1 Litre)<br>
-• 🚽 Bathroom Cleaner: <strong>R99.99</strong> (750ml)<br>
-• 🍳 Industrial Degreaser: <strong>R179.99</strong> (1 Litre)<br>
-• 🧴 Hand Sanitizer: <strong>R49.99</strong> (500ml)<br><br>
-💼 <strong>Bulk discounts available for businesses!</strong> Call us for special pricing.`;
-    }
-    
-    if (question.includes('help') || question.includes('what can you do')) {
-        return `🤖 <strong>I can help you with:</strong><br><br>
-✅ Recommend products based on your cleaning needs<br>
-✅ Explain how to use each product properly<br>
-✅ Compare products to find the best one for you<br>
-✅ Tell you where to buy and delivery options<br>
-✅ Give you prices and bulk discount info<br><br>
-<strong>Try asking me specific questions like:</strong><br>
-• "How do I remove oxidation from aluminium windows?"<br>
-• "What's best for a greasy kitchen stove?"<br>
-• "Which product removes glass streaks?"<br>
-• "Do you deliver to Cape Town?"`;
-    }
-    
-    // Default response
-    return `🛒 <strong>How can I help you today?</strong><br><br>
+    return `💎 <strong>How may I assist you with your premium cleaning needs?</strong><br><br>
 Try asking me:<br>
-🔹 "How do I clean faded aluminium windows?"<br>
-🔹 "What removes tough grease from my stove?"<br>
-🔹 "Best product for glass streaks?"<br>
-🔹 "Where can I buy your products?"<br>
-🔹 "Show me all prices"<br>
-🔹 "Do you have bulk discounts?"<br><br>
-<strong>I'm here to help you find the perfect cleaning solution!</strong> ✨`;
+🔹 "How do I restore faded aluminium windows?"<br>
+🔹 "Best product for streak-free glass?"<br>
+🔹 "Remove tough kitchen grease"<br>
+🔹 "Where is your showroom?"<br>
+🔹 "Show me all premium products"<br><br>
+<em>Your satisfaction is our luxury guarantee ✨</em>`;
 }
 
-// Initialize AI assistant when page loads
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAIAssistant);
 } else {
