@@ -1,7 +1,40 @@
+// Shopping Cart Functions
 let cart = [];
 let cartCount = 0;
 let cartTotal = 0;
 
+// Aluminium product size variables
+let currentAluminiumPrice = 349.99;
+let currentAluminiumSize = "1 Litre";
+
+// Function to select aluminium size
+function selectAluminiumSize(price, size, button) {
+    // Remove active class from all size buttons
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    
+    // Add active class to clicked button
+    button.classList.add('active');
+    
+    // Update price display
+    const priceDiv = document.getElementById('aluminiumPrice');
+    if (priceDiv) {
+        priceDiv.textContent = `R${price.toFixed(2)}`;
+    }
+    
+    // Update global variables
+    currentAluminiumPrice = price;
+    currentAluminiumSize = size;
+}
+
+// Add to cart with size
+function addToCartWithSize(productName, price, size) {
+    const productWithSize = `${productName} (${size})`;
+    addToCart(productWithSize, price);
+}
+
+// Original add to cart function
 function addToCart(productName, price) {
     const existingItem = cart.find(item => item.name === productName);
     
@@ -21,12 +54,16 @@ function addToCart(productName, price) {
     showNotification(`${productName} added to cart!`);
 }
 
+// Update cart display
 function updateCart() {
     cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartTotal = cart.reduce((sum, item) => sum + item.total, 0);
     
-    document.getElementById('cartCount').textContent = cartCount;
-    document.getElementById('cartTotal').textContent = `R${cartTotal.toFixed(2)}`;
+    const cartCountElement = document.getElementById('cartCount');
+    const cartTotalElement = document.getElementById('cartTotal');
+    
+    if (cartCountElement) cartCountElement.textContent = cartCount;
+    if (cartTotalElement) cartTotalElement.textContent = `R${cartTotal.toFixed(2)}`;
     
     const cartItemsElement = document.getElementById('cartItems');
     if (cartItemsElement) {
@@ -49,6 +86,7 @@ function updateCart() {
     }
 }
 
+// Remove from cart
 function removeFromCart(productName) {
     const index = cart.findIndex(item => item.name === productName);
     if (index !== -1) {
@@ -58,14 +96,16 @@ function removeFromCart(productName) {
     }
 }
 
+// Toggle cart sidebar
 function toggleCart() {
     const sidebar = document.getElementById('cartSidebar');
     const overlay = document.getElementById('cartOverlay');
     
-    sidebar.classList.toggle('active');
-    overlay.classList.toggle('active');
+    if (sidebar) sidebar.classList.toggle('active');
+    if (overlay) overlay.classList.toggle('active');
 }
 
+// Place order
 function checkout() {
     if (cart.length === 0) {
         alert('Your cart is empty!');
@@ -78,6 +118,7 @@ function checkout() {
     toggleCart();
 }
 
+// Show notification
 function showNotification(message) {
     const notification = document.createElement('div');
     notification.textContent = message;

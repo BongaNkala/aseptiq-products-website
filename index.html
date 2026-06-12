@@ -54,16 +54,22 @@
         <div class="container">
             <h2 class="section-title">Our Premium Products</h2>
             <div class="product-grid">
+                <!-- Aluminium Polish/Wax with Size Options -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/Alluminium_Polish.jpeg" alt="Aluminium Polish/Wax - 1 Litre">
+                        <img src="images/Alluminium_Polish.jpeg" alt="Aluminium Polish/Wax">
                     </div>
                     <h3>Aluminium Polish/Wax</h3>
-                    <p>1 Litre - Used for faded: Aluminium Windows & Doors | Kingdom Doors | Burglars | Gates.</p>
-                    <div class="price">R349.99</div>
-                    <button class="btn-add" onclick="addToCart('Aluminium Polish/Wax', 349.99)">Add to Cart</button>
+                    <p>Used for faded: Aluminium Windows & Doors | Kingdom Doors | Burglars | Gates.</p>
+                    <div class="product-sizes">
+                        <button class="size-btn active" onclick="selectAluminiumSize(349.99, '1 Litre', this)">1 Litre - R349.99</button>
+                        <button class="size-btn" onclick="selectAluminiumSize(174.99, '500g', this)">500g - R174.99</button>
+                    </div>
+                    <div class="price" id="aluminiumPrice">R349.99</div>
+                    <button class="btn-add" onclick="addToCartWithSize('Aluminium Polish/Wax', currentAluminiumPrice, currentAluminiumSize)">Add to Cart</button>
                 </div>
 
+                <!-- Glass Cleaner -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="https://via.placeholder.com/300x300/2c7da0/ffffff?text=Glass+Cleaner" alt="Glass Cleaner">
@@ -74,6 +80,7 @@
                     <button class="btn-add" onclick="addToCart('Streak-Free Glass Cleaner', 89.99)">Add to Cart</button>
                 </div>
 
+                <!-- Floor Cleaner -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="https://via.placeholder.com/300x300/2c7da0/ffffff?text=Floor+Cleaner" alt="Floor Cleaner">
@@ -84,6 +91,7 @@
                     <button class="btn-add" onclick="addToCart('Heavy-Duty Floor Cleaner', 129.99)">Add to Cart</button>
                 </div>
 
+                <!-- Bathroom Cleaner -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="https://via.placeholder.com/300x300/2c7da0/ffffff?text=Bathroom+Cleaner" alt="Bathroom Cleaner">
@@ -94,6 +102,7 @@
                     <button class="btn-add" onclick="addToCart('Anti-Bacterial Bathroom Cleaner', 99.99)">Add to Cart</button>
                 </div>
 
+                <!-- Industrial Degreaser -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="https://via.placeholder.com/300x300/2c7da0/ffffff?text=Industrial+Degreaser" alt="Industrial Degreaser">
@@ -104,6 +113,7 @@
                     <button class="btn-add" onclick="addToCart('Industrial Degreaser', 179.99)">Add to Cart</button>
                 </div>
 
+                <!-- Hand Sanitizer -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="https://via.placeholder.com/300x300/2c7da0/ffffff?text=Hand+Sanitizer" alt="Hand Sanitizer">
@@ -128,7 +138,7 @@
             <div class="cart-total">
                 <strong>Total:</strong> <span id="cartTotal">R0.00</span>
             </div>
-            <button class="btn-checkout" onclick="checkout()">Checkout</button>
+            <button class="btn-checkout" onclick="checkout()">Place Order</button>
         </div>
     </div>
 
