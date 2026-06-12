@@ -1,5 +1,5 @@
 // Enhanced AI Assistant for Aseptiq Products RSA
-let aiVisible = true;
+let aiVisible = false;  // Changed to false - closed by default
 
 function initAIAssistant() {
     if (document.getElementById('aiAssistantContainer')) return;
@@ -13,7 +13,7 @@ function initAIAssistant() {
                 </div>
                 <span id="toggleArrow" class="toggle-arrow">▼</span>
             </div>
-            <div id="aiContent" class="ai-content">
+            <div id="aiContent" class="ai-content" style="display: none;">
                 <div class="ai-input-area">
                     <div class="input-wrapper">
                         <span class="input-icon">🔍</span>
@@ -50,6 +50,12 @@ function initAIAssistant() {
         </div>
     `;
     document.body.insertAdjacentHTML('beforeend', aiHTML);
+    
+    // Ensure arrow points down (closed state)
+    const arrow = document.getElementById('toggleArrow');
+    if (arrow) {
+        arrow.style.transform = 'rotate(0deg)';
+    }
 }
 
 function toggleAI() {
@@ -59,10 +65,10 @@ function toggleAI() {
     
     if (aiVisible) {
         content.style.display = 'flex';
-        arrow.style.transform = 'rotate(0deg)';
+        arrow.style.transform = 'rotate(180deg)';
     } else {
         content.style.display = 'none';
-        arrow.style.transform = 'rotate(180deg)';
+        arrow.style.transform = 'rotate(0deg)';
     }
 }
 
