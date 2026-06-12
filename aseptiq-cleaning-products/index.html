@@ -1,0 +1,192 @@
+cat > index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aseptiq Products RSA - Premium Cleaning Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Aseptiq<span>Products</span></h1>
+                <p class="tagline">RSA | Premium Cleaning Solutions</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Video Background -->
+    <section id="home" class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="images/ASEPTIQ_logo_reveal.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h2>Professional Cleaning Solutions for South Africa</h2>
+                <p>Powerful, eco-friendly, and effective cleaning products for homes, businesses, and industries.</p>
+                <a href="#products" class="btn-primary">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Premium Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/Alluminium_Polish.jpeg" alt="Aluminium Polish/Wax - 1 Litre">
+                    </div>
+                    <h3>Aluminium Polish/Wax</h3>
+                    <p>1 Litre - Used for faded: Aluminium Windows & Doors | Kingdom Doors | Burglars | Gates.</p>
+                    <div class="price">R349.99</div>
+                    <button class="btn-add" onclick="addToCart('Aluminium Polish/Wax', 349.99)">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/2c7da0/ffffff?text=Glass+Cleaner" alt="Glass Cleaner">
+                    </div>
+                    <h3>Streak-Free Glass Cleaner</h3>
+                    <p>Professional formula for crystal clear windows and mirrors.</p>
+                    <div class="price">R89.99</div>
+                    <button class="btn-add" onclick="addToCart('Streak-Free Glass Cleaner', 89.99)">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/2c7da0/ffffff?text=Floor+Cleaner" alt="Floor Cleaner">
+                    </div>
+                    <h3>Heavy-Duty Floor Cleaner</h3>
+                    <p>Perfect for tiles, marble, and hardwood floors.</p>
+                    <div class="price">R129.99</div>
+                    <button class="btn-add" onclick="addToCart('Heavy-Duty Floor Cleaner', 129.99)">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/2c7da0/ffffff?text=Bathroom+Cleaner" alt="Bathroom Cleaner">
+                    </div>
+                    <h3>Anti-Bacterial Bathroom Cleaner</h3>
+                    <p>Removes limescale, soap scum, and kills bacteria.</p>
+                    <div class="price">R99.99</div>
+                    <button class="btn-add" onclick="addToCart('Anti-Bacterial Bathroom Cleaner', 99.99)">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/2c7da0/ffffff?text=Industrial+Degreaser" alt="Industrial Degreaser">
+                    </div>
+                    <h3>Industrial Degreaser</h3>
+                    <p>Powerful formula for kitchens and industrial use.</p>
+                    <div class="price">R179.99</div>
+                    <button class="btn-add" onclick="addToCart('Industrial Degreaser', 179.99)">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/2c7da0/ffffff?text=Hand+Sanitizer" alt="Hand Sanitizer">
+                    </div>
+                    <h3>Alcohol-Based Hand Sanitizer</h3>
+                    <p>75% alcohol, kills 99.9% of germs instantly.</p>
+                    <div class="price">R49.99</div>
+                    <button class="btn-add" onclick="addToCart('Alcohol-Based Hand Sanitizer', 49.99)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong> <span id="cartTotal">R0.00</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <button class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cartCount">0</span>
+    </button>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Aseptiq Products RSA</h2>
+            <div class="about-content">
+                <p>Founded in South Africa, Aseptiq Products RSA is dedicated to providing high-quality, effective cleaning solutions for homes, businesses, and industries across the nation.</p>
+                <p>Our products are manufactured using advanced German technology and eco-friendly ingredients, ensuring powerful cleaning without harming the environment.</p>
+                <div class="features">
+                    <div class="feature">
+                        <h3>✓ Eco-Friendly</h3>
+                        <p>Biodegradable and environmentally safe</p>
+                    </div>
+                    <div class="feature">
+                        <h3>✓ Made in RSA</h3>
+                        <p>Locally manufactured for South Africans</p>
+                    </div>
+                    <div class="feature">
+                        <h3>✓ Professional Grade</h3>
+                        <p>Trusted by cleaning professionals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>📞 Phone: +27 (0) 67 739 6525</p>
+                    <p>📱 WhatsApp: 087 938 6526</p>
+                    <p>✉️ Email: info@aseptiqproducts.co.za</p>
+                    <p>📍 Address: 88 Mmila Road, Soweto, 1868</p>
+                    <p>⏰ Hours: Mon-Fri 8:00 - 17:00</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aseptiq Products RSA. All rights reserved. | Premium Cleaning Solutions for South Africa</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
