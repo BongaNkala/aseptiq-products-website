@@ -1,0 +1,9 @@
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/OVEN CLEANER.jpg" alt="Oven Cleaner - Aseptiq Products">
+                    </div>
+                    <h3>Oven Cleaner</h3>
+                    <p>Powerful oven cleaner that removes baked-on grease, grime, and carbon deposits. Safe for all oven surfaces.</p>
+                    <div class="price">R129.99</div>
+                    <button class="btn-add" onclick="addToCart('Oven Cleaner', 129.99)">Add to Cart</button>
+                </div>
