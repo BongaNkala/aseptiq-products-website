@@ -175,7 +175,7 @@ function getAIResponse(question) {
         return `📍 ASEPTIQ SHOWROOM\n\n🏪 88 Mmila Road, Soweto, 1868\n📞 +27 (0) 67 739 6525\n💬 WhatsApp: 087 938 6526\n✉️ info@aseptiqproducts.co.za\n\n🚚 Free delivery on orders over R500!`;
     }
     if (q.includes('price') || q.includes('cost') || q.includes('prices')) {
-        return `💰 ASEPTIQ PRICES\n\n✨ Aluminium Polish/Wax: R349.99 (1L) | R174.99 (500g)\n💎 Glass Cleaner: R89.99\n🔥 Degreaser: R179.99\n🧹 Floor Cleaner: R129.99\n🚽 Bathroom Cleaner: R99.99\n🧴 Hand Sanitizer: R49.99\n\n💼 Bulk discounts available!`;
+        return `💰 ASEPTIQ PRICES\n\n✨ Aluminium Polish/Wax: R349.99 (1L) | R174.99 (500g)\n💎 Glass Cleaner: R89.99\n🔥 Degreaser: R179.99\n🧹 Floor Cleaner: R129.99\n🚽 Pine Gel: R79.99\n🧴 Hand Sanitizer: R49.99\n\n💼 Bulk discounts available!`;
     }
     
     return `💎 How can I help?\n\n✨ Try asking:\n• "Aluminium" - Sizes & prices\n• "Glass" - Glass cleaner\n• "Grease" - Degreaser\n• "Where to buy" - Store location\n• "Prices" - All products`;
@@ -186,3 +186,36 @@ if (document.readyState === 'loading') {
 } else {
     initAIAssistant();
 }
+
+// Add Pine Gel to AI responses
+if (q.includes('pine') || q.includes('multi-purpose') || q.includes('kennel')) {
+    response = `🌲 PINE GEL MULTI-PURPOSE CLEANER - R79.99 (1kg)\n\n📝 Uses:\n• Baths and tiles\n• Floors (all types)\n• Kennels and pet areas\n\n✨ Features:\n• Kills 99.9% of germs\n• Eliminates bad smells\n• Leaves fresh pine scent\n\n📝 How to use: Dilute with water or apply directly. Wipe or rinse clean.`;
+}
+
+// Add Handy Clean to AI responses
+if (q.includes('handy') || q.includes('handy clean') || q.includes('double strength')) {
+    response = `🧼 HANDY CLEAN - R149.99 (1 Litre)\n\n✨ Features:\n• Double strength formula\n• Removes 99.9% of dirt\n• Brightening and whitening action\n• Fresh fragrance\n\n📝 Uses:\n• All surfaces including tiles, floors, and countertops\n• Perfect for daily cleaning\n\n📝 How to use: Dilute with water or apply directly. Wipe or rinse clean.`;
+}
+
+// Add Dish Washing Liquid to AI responses
+if (q.includes('dish') || q.includes('washing liquid') || q.includes('lemon') || q.includes('dishes')) {
+    response = `🍋 DISH WASHING LIQUID - R69.99 (1 Litre)\n\n✨ Features:\n• 100% Lemon formula\n• Cuts through tough grease\n• Leaves dishes sparkling clean\n• Fresh lemon scent\n\n📝 Ingredients:\n• SMS70\n• Flakes\n• Perfume & Colorants\n\n📝 How to use: Apply to sponge, wash dishes, rinse thoroughly.`;
+}
+
+// Add new product responses
+if (q.includes('tile') || q.includes('floor')) {
+    response = `🧹 TILE CLEANER - R99.99 (1 Litre)\n\n✨ Features:\n• Removes oil, grease, and fat\n• Tough on dirt\n• Safe for floors\n\n📝 How to use: Dilute as needed. Apply to tiles, let sit, then rinse.`;
+}
+else if (q.includes('furniture') || q.includes('car interior')) {
+    response = `🪑 FURNITURE POLISH - R89.99\n\n✨ Features:\n• Instant effect\n• Clean technology\n• Perfect for car interiors and household furniture\n\n📝 How to use: Shake well. Spray 20cm from surface. Wipe with soft cloth.`;
+}
+else if (q.includes('wash') || q.includes('wax') || q.includes('car')) {
+    response = `🚗 WASH & WAX - R129.99 (1 Litre)\n\n✨ Features:\n• Long-lasting shine\n• Restores paint color\n• Fast and easy to apply\n\n📝 How to use: Wash car as normal. Apply wax and buff to shine.`;
+}
+else if (q.includes('dashboard') || q.includes('dash') || q.includes('vinyl')) {
+    response = `💺 DASHBOARD POLISH - R79.99 (500ml)\n\n✨ Features:\n• Renews, shines, and protects\n• Works on rubber, vinyl, leather, and plastic\n\n📝 How to use: Apply to soft cloth. Rub onto surface. Buff to shine.`;
+}
+else if (q.includes('window') || q.includes('glass')) {
+    response = `🪟 WINDOW CLEANER - R69.99 (1 Litre)\n\n✨ Features:\n• Removes heavy dirt\n• Leaves no streaks\n\n📝 How to use: Use neat or dilute 1:10 with water. Apply with cloth or newspaper. Wipe dry.`;
+}
+
