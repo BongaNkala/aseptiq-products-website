@@ -548,3 +548,21 @@ function addToCartWithSizeWindow(productName, price, size) {
     addToCart(`${productName} (${size})`, price);
 }
 
+
+// Debug function to check links
+document.addEventListener('DOMContentLoaded', function() {
+    const comboLink = document.querySelector('a[href="combos.html"]');
+    const specialsLink = document.querySelector('a[href="specials.html"]');
+    
+    if (comboLink) {
+        comboLink.addEventListener('click', function(e) {
+            console.log('Combo link clicked - navigating to combos.html');
+        });
+    }
+    
+    if (specialsLink) {
+        specialsLink.addEventListener('click', function(e) {
+            console.log('Specials link clicked - navigating to specials.html');
+        });
+    }
+});
