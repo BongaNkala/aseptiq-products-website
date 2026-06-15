@@ -294,3 +294,257 @@ function selectIndustrialSize(productId, price, size, button) {
         showNotification(`🏭 Industrial size ${size} selected - R${price.toFixed(2)}. For bulk orders, contact us for special pricing!`);
     }
 }
+
+// Oven Cleaner size variables and functions
+let currentOvenPrice = 129.99;
+let currentOvenSize = "1 Litre";
+
+function selectOvenSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const priceDiv = document.getElementById('ovenPrice');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    currentOvenPrice = price;
+    currentOvenSize = size;
+}
+
+function addToCartWithSizeOven(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+// Heavy Duty Degreaser
+let currentDegreaserPrice = 179.99;
+let currentDegreaserSize = "1 Litre";
+
+function selectDegreaserSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const priceDiv = document.getElementById('degreaserPrice');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    currentDegreaserPrice = price;
+    currentDegreaserSize = size;
+}
+
+function addToCartWithSizeDegreaser(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+// Pine Gel
+let currentPinePrice = 79.99;
+let currentPineSize = "1kg";
+
+function selectPineSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const priceDiv = document.getElementById('pinePrice');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    currentPinePrice = price;
+    currentPineSize = size;
+}
+
+function addToCartWithSizePine(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+// Handy Clean
+let currentHandyPrice = 149.99;
+let currentHandySize = "1 Litre";
+
+function selectHandySize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const priceDiv = document.getElementById('handyPrice');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    currentHandyPrice = price;
+    currentHandySize = size;
+}
+
+function addToCartWithSizeHandy(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+// Dish Washing Liquid
+let currentDishPrice = 69.99;
+let currentDishSize = "1 Litre";
+
+function selectDishSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const priceDiv = document.getElementById('dishPrice');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    currentDishPrice = price;
+    currentDishSize = size;
+}
+
+function addToCartWithSizeDish(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+// Tile Cleaner
+let currentTilePrice = 99.99;
+let currentTileSize = "1 Litre";
+
+function selectTileSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const priceDiv = document.getElementById('tilePrice');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    currentTilePrice = price;
+    currentTileSize = size;
+}
+
+function addToCartWithSizeTile(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+// Furniture Polish
+let currentFurniturePrice = 89.99;
+let currentFurnitureSize = "500ml";
+
+function selectFurnitureSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const priceDiv = document.getElementById('furniturePrice');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    currentFurniturePrice = price;
+    currentFurnitureSize = size;
+}
+
+function addToCartWithSizeFurniture(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+// Wash & Wax
+let currentWashPrice = 129.99;
+let currentWashSize = "1 Litre";
+
+function selectWashSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const priceDiv = document.getElementById('washPrice');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    currentWashPrice = price;
+    currentWashSize = size;
+}
+
+function addToCartWithSizeWash(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+// Dashboard Polish
+let currentDashboardPrice = 79.99;
+let currentDashboardSize = "500ml";
+
+function selectDashboardSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const priceDiv = document.getElementById('dashboardPrice');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    currentDashboardPrice = price;
+    currentDashboardSize = size;
+}
+
+function addToCartWithSizeDashboard(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+// Premium Dish Washing Liquid
+let currentPremiumDishPrice = 79.99;
+let currentPremiumDishSize = "1 Litre";
+
+function selectPremiumDishSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const priceDiv = document.getElementById('premiumDishPrice');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    currentPremiumDishPrice = price;
+    currentPremiumDishSize = size;
+}
+
+function addToCartWithSizePremiumDish(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+// Window Cleaner
+let currentWindowPrice = 69.99;
+let currentWindowSize = "1 Litre";
+
+function selectWindowSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const priceDiv = document.getElementById('windowPrice');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    currentWindowPrice = price;
+    currentWindowSize = size;
+}
+
+function addToCartWithSizeWindow(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
