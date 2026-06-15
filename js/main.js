@@ -511,3 +511,213 @@ function selectWindowSize(price, size, button) {
     currentWindowPrice = price;
     currentWindowSize = size;
 }
+
+// Helper function to show elegant alert with available sizes
+function showSoldOutAlert(productName, requestedSize, availableSizes) {
+    // Remove any existing alert
+    const existingAlert = document.querySelector('.sold-out-alert');
+    if (existingAlert) existingAlert.remove();
+    
+    // Create alert element
+    const alertDiv = document.createElement('div');
+    alertDiv.className = 'sold-out-alert';
+    alertDiv.innerHTML = `
+        <h4>📦 Currently Unavailable</h4>
+        <p><strong>${productName}</strong> in <strong>${requestedSize}</strong> is currently sold out.</p>
+        <div class="available-sizes">
+            <strong>✅ Available Sizes:</strong><br>
+            ${availableSizes.map(size => `<span>${size}</span>`).join('')}
+        </div>
+        <button onclick="this.parentElement.remove()">Continue Shopping</button>
+    `;
+    document.body.appendChild(alertDiv);
+    
+    // Auto remove after 6 seconds
+    setTimeout(() => {
+        if (alertDiv && alertDiv.parentElement) {
+            alertDiv.style.animation = 'slideDownFade 0.3s reverse';
+            setTimeout(() => alertDiv.remove(), 300);
+        }
+    }, 6000);
+}
+
+// Updated functions with elegant alerts
+function selectAluminiumSize(price, size, button) {
+    if (price === 'Sold Out') {
+        showSoldOutAlert('Aluminium Polish/Wax', size, ['500ml - R199.99', '1 Litre - R349.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('aluminiumPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentAluminiumPrice = price;
+    currentAluminiumSize = size;
+}
+
+function selectOvenSize(price, size, button) {
+    if (price === 'Sold Out') {
+        showSoldOutAlert('Oven Cleaner', size, ['750ml - R74.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('ovenPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentOvenPrice = price;
+    currentOvenSize = size;
+}
+
+function selectDegreaserSize(price, size, button) {
+    if (price === 'Sold Out') {
+        showSoldOutAlert('Heavy Duty Degreaser', size, ['1 Litre - R119.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('degreaserPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentDegreaserPrice = price;
+    currentDegreaserSize = size;
+}
+
+function selectPineSize(price, size, button) {
+    if (price === 'Sold Out') {
+        showSoldOutAlert('Pine Gel', size, ['1kg - R54.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('pinePrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentPinePrice = price;
+    currentPineSize = size;
+}
+
+function selectHandySize(price, size, button) {
+    if (price === 'Sold Out') {
+        showSoldOutAlert('Handy Clean', size, ['1 Litre - R39.99', '5 Litre - R155.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('handyPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentHandyPrice = price;
+    currentHandySize = size;
+}
+
+function selectDishSize(price, size, button) {
+    if (price === 'Sold Out') {
+        showSoldOutAlert('Dish Washing Liquid', size, ['750ml - R35.99', '1 Litre - R49.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('dishPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentDishPrice = price;
+    currentDishSize = size;
+}
+
+function selectTileSize(price, size, button) {
+    if (price === 'Sold Out') {
+        showSoldOutAlert('Tile Cleaner', size, ['1 Litre - R64.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('tilePrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentTilePrice = price;
+    currentTileSize = size;
+}
+
+function selectFurnitureSize(price, size, button) {
+    if (price === 'Sold Out') {
+        showSoldOutAlert('Furniture Polish', size, ['500ml - R64.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('furniturePrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentFurniturePrice = price;
+    currentFurnitureSize = size;
+}
+
+function selectWashSize(price, size, button) {
+    if (price === 'Sold Out' || price === 'sold Out') {
+        showSoldOutAlert('Wash & Wax', size, ['1 Litre - R59.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('washPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentWashPrice = price;
+    currentWashSize = size;
+}
+
+function selectDashboardSize(price, size, button) {
+    if (price === 'Sold Out') {
+        showSoldOutAlert('Dashboard Polish', size, ['250ml - R64.99', '500ml - R99.99', '1 Litre - R149.99', '5 Litre - R349.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('dashboardPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentDashboardPrice = price;
+    currentDashboardSize = size;
+}
+
+function selectPremiumDishSize(price, size, button) {
+    if (price === 'Sold Out') {
+        showSoldOutAlert('Premium Dish Liquid - Bio Citrus', size, ['1 Litre - R54.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('premiumDishPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentPremiumDishPrice = price;
+    currentPremiumDishSize = size;
+}
+
+function selectWindowSize(price, size, button) {
+    if (price === 'Sold Out') {
+        showSoldOutAlert('Window Cleaner', size, ['500ml - R39.99', '1 Litre - R69.99']);
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('windowPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentWindowPrice = price;
+    currentWindowSize = size;
+}
