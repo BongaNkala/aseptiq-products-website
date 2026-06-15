@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aseptiq Products RSA - Special Offers</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ai-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .special-badge {
+            background: linear-gradient(135deg, #E63946, #FF6B6B);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .discount {
+            color: #E63946;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .countdown {
+            background: #1A5F7A;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 11px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Aseptiq<span>Products</span></h1>
+                <p class="tagline">RSA | Premium Cleaning Solutions</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="combos.html">Combos</a></li>
+                    <li><a href="specials.html">Specials</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cart">
+                <button class="cart-icon-header" onclick="toggleCart()">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">🎉 Weekly Specials 🎉</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Limited time offers! Get these deals while stocks last.</p>
+            <div class="product-grid">
+                <!-- Special 1 -->
+                <div class="product-card" style="position: relative;">
+                    <div class="special-badge">-30% OFF</div>
+                    <div class="product-image">
+                        <img src="images/AP.png" alt="Aluminium Polish" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Aluminium Polish/Wax</h3>
+                    <p>1 Litre - Restores faded aluminium surfaces</p>
+                    <div class="price">R244.99</div>
+                    <div class="discount">
+                        <span class="original-price">R349.99</span>
+                        Save R105.00
+                    </div>
+                    <div class="countdown">⏰ Offer ends in 7 days</div>
+                    <button class="btn-add" onclick="addToCart('Aluminium Polish/Wax - SPECIAL', 244.99)">Buy Now</button>
+                </div>
+
+                <!-- Special 2 -->
+                <div class="product-card" style="position: relative;">
+                    <div class="special-badge">-25% OFF</div>
+                    <div class="product-image">
+                        <img src="images/DG.png" alt="Degreaser" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Heavy Duty Degreaser</h3>
+                    <p>1 Litre - Industrial strength formula</p>
+                    <div class="price">R134.99</div>
+                    <div class="discount">
+                        <span class="original-price">R179.99</span>
+                        Save R45.00
+                    </div>
+                    <div class="countdown">⏰ Offer ends in 5 days</div>
+                    <button class="btn-add" onclick="addToCart('Heavy Duty Degreaser - SPECIAL', 134.99)">Buy Now</button>
+                </div>
+
+                <!-- Special 3 -->
+                <div class="product-card" style="position: relative;">
+                    <div class="special-badge">-20% OFF</div>
+                    <div class="product-image">
+                        <img src="images/ODW.png" alt="Premium Dish Liquid" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Premium Dish Liquid - Bio Citrus</h3>
+                    <p>1 Litre - Eco-friendly formula</p>
+                    <div class="price">R63.99</div>
+                    <div class="discount">
+                        <span class="original-price">R79.99</span>
+                        Save R16.00
+                    </div>
+                    <div class="countdown">⏰ Offer ends in 10 days</div>
+                    <button class="btn-add" onclick="addToCart('Premium Dish Liquid - SPECIAL', 63.99)">Buy Now</button>
+                </div>
+
+                <!-- Special 4 -->
+                <div class="product-card" style="position: relative;">
+                    <div class="special-badge">BUY 2 GET 1 FREE</div>
+                    <div class="product-image">
+                        <img src="images/HC.png" alt="Handy Clean" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Handy Clean</h3>
+                    <p>1 Litre - Double strength cleaner</p>
+                    <div class="price">R299.98</div>
+                    <div class="discount">Buy 2, Get 1 FREE (Save R149.99)</div>
+                    <div class="countdown">⏰ Limited stock available</div>
+                    <button class="btn-add" onclick="addToCart('Handy Clean - B2G1 Deal', 299.98)">Claim Deal</button>
+                </div>
+
+                <!-- Special 5 -->
+                <div class="product-card" style="position: relative;">
+                    <div class="special-badge">FLASH SALE</div>
+                    <div class="product-image">
+                        <img src="images/CW.png" alt="Wash & Wax" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Wash & Wax</h3>
+                    <p>1 Litre - Long-lasting car shine</p>
+                    <div class="price">R90.99</div>
+                    <div class="discount">
+                        <span class="original-price">R129.99</span>
+                        Save R39.00
+                    </div>
+                    <div class="countdown">⏰ 48 HOURS ONLY!</div>
+                    <button class="btn-add" onclick="addToCart('Wash & Wax - FLASH SALE', 90.99)">Buy Now</button>
+                </div>
+
+                <!-- Special 6 -->
+                <div class="product-card" style="position: relative;">
+                    <div class="special-badge">-15% OFF</div>
+                    <div class="product-image">
+                        <img src="images/OV.png" alt="Oven Cleaner" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Oven Cleaner</h3>
+                    <p>1 Litre - Removes baked-on grease</p>
+                    <div class="price">R110.49</div>
+                    <div class="discount">
+                        <span class="original-price">R129.99</span>
+                        Save R19.50
+                    </div>
+                    <div class="countdown">⏰ Offer ends in 3 days</div>
+                    <button class="btn-add" onclick="addToCart('Oven Cleaner - SPECIAL', 110.49)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aseptiq Products RSA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/ai-assistant.js"></script>
+</body>
+</html>

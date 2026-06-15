@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aseptiq Products RSA - Combo Deals</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ai-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .combo-badge {
+            background: linear-gradient(135deg, #FF6B35, #FF8C42);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+        .savings {
+            color: #FF6B35;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Aseptiq<span>Products</span></h1>
+                <p class="tagline">RSA | Premium Cleaning Solutions</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="combos.html">Combos</a></li>
+                    <li><a href="specials.html">Specials</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cart">
+                <button class="cart-icon-header" onclick="toggleCart()">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">🔥 Combo Deals 🔥</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Save more with our exclusive bundle offers!</p>
+            <div class="product-grid">
+                <!-- Kitchen Combo -->
+                <div class="product-card" style="position: relative;">
+                    <div class="combo-badge">SAVE 15%</div>
+                    <div class="product-image">
+                        <img src="images/DG.png" alt="Kitchen Combo" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Kitchen Care Combo</h3>
+                    <p>Heavy Duty Degreaser + Oven Cleaner + Dish Washing Liquid</p>
+                    <div class="price">R349.99</div>
+                    <div class="savings">
+                        <span class="original-price">R409.97</span>
+                        Save R59.98
+                    </div>
+                    <button class="btn-add" onclick="addToCart('Kitchen Care Combo', 349.99)">Add Combo to Cart</button>
+                </div>
+
+                <!-- Car Care Combo -->
+                <div class="product-card" style="position: relative;">
+                    <div class="combo-badge">SAVE 20%</div>
+                    <div class="product-image">
+                        <img src="images/CW.png" alt="Car Care Combo" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Car Care Combo</h3>
+                    <p>Wash & Wax + Dashboard Polish + Window Cleaner</p>
+                    <div class="price">R249.99</div>
+                    <div class="savings">
+                        <span class="original-price">R309.97</span>
+                        Save R59.98
+                    </div>
+                    <button class="btn-add" onclick="addToCart('Car Care Combo', 249.99)">Add Combo to Cart</button>
+                </div>
+
+                <!-- Home Cleaning Combo -->
+                <div class="product-card" style="position: relative;">
+                    <div class="combo-badge">SAVE 25%</div>
+                    <div class="product-image">
+                        <img src="images/TC.png" alt="Home Cleaning Combo" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Home Cleaning Combo</h3>
+                    <p>Tile Cleaner + Pine Gel + Handy Clean</p>
+                    <div class="price">R279.99</div>
+                    <div class="savings">
+                        <span class="original-price">R369.97</span>
+                        Save R89.98
+                    </div>
+                    <button class="btn-add" onclick="addToCart('Home Cleaning Combo', 279.99)">Add Combo to Cart</button>
+                </div>
+
+                <!-- Industrial Combo -->
+                <div class="product-card" style="position: relative;">
+                    <div class="combo-badge">SAVE 30%</div>
+                    <div class="product-image">
+                        <img src="images/DG.png" alt="Industrial Combo" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Industrial Strength Combo</h3>
+                    <p>Heavy Duty Degreaser (5L) + Industrial Degreaser + Tile Cleaner</p>
+                    <div class="price">R699.99</div>
+                    <div class="savings">
+                        <span class="original-price">R999.97</span>
+                        Save R299.98
+                    </div>
+                    <button class="btn-add" onclick="addToCart('Industrial Strength Combo', 699.99)">Add Combo to Cart</button>
+                </div>
+
+                <!-- Complete Car Combo -->
+                <div class="product-card" style="position: relative;">
+                    <div class="combo-badge">BEST VALUE</div>
+                    <div class="product-image">
+                        <img src="images/DP.png" alt="Complete Car Combo" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Complete Car Detail Combo</h3>
+                    <p>Wash & Wax + Dashboard Polish + Window Cleaner + Furniture Polish</p>
+                    <div class="price">R329.99</div>
+                    <div class="savings">
+                        <span class="original-price">R399.96</span>
+                        Save R69.97
+                    </div>
+                    <button class="btn-add" onclick="addToCart('Complete Car Detail Combo', 329.99)">Add Combo to Cart</button>
+                </div>
+
+                <!-- Eco-Friendly Combo -->
+                <div class="product-card" style="position: relative;">
+                    <div class="combo-badge">ECO DEAL</div>
+                    <div class="product-image">
+                        <img src="images/ODW.png" alt="Eco Combo" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <h3>Eco-Friendly Combo</h3>
+                    <p>Premium Dish Liquid Bio Citrus + Pine Gel + Handy Clean</p>
+                    <div class="price">R259.99</div>
+                    <div class="savings">
+                        <span class="original-price">R309.97</span>
+                        Save R49.98
+                    </div>
+                    <button class="btn-add" onclick="addToCart('Eco-Friendly Combo', 259.99)">Add Combo to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aseptiq Products RSA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/ai-assistant.js"></script>
+</body>
+</html>
