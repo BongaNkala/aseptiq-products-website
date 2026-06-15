@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aseptiq Products RSA - Premium Cleaning Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ai-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with Cart Icon -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Aseptiq<span>Products</span></h1>
+                <p class="tagline">RSA | Premium Cleaning Solutions</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cart">
+                <button class="cart-icon-header" onclick="toggleCart()">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="images/ASEPTIQ_logo_reveal.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content-bottom">
+            <h2>Professional Cleaning Solutions for South Africa</h2>
+            <p>Powerful, eco-friendly, and effective cleaning products for homes, businesses, and industries.</p>
+            <a href="#products" class="btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Premium Products</h2>
+            <div class="product-grid">
+                <!-- Aluminium Polish/Wax -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/AP.png" alt="Aluminium Polish/Wax">
+                    </div>
+                    <h3>Aluminium Polish/Wax</h3>
+                    <p>Used for faded: Aluminium Windows & Doors | Kingdom Doors | Burglars | Gates.</p>
+                    <div class="product-sizes">
+                        <button class="size-btn active" onclick="selectAluminiumSize(349.99, '1 Litre', this)">1 Litre</button>
+                        <button class="size-btn" onclick="selectAluminiumSize(174.99, '500ml', this)">500ml</button>
+                    </div>
+                    <div class="price" id="aluminiumPrice">R349.99</div>
+                    <button class="btn-add" onclick="addToCartWithSize('Aluminium Polish/Wax', currentAluminiumPrice, currentAluminiumSize)">Add to Cart</button>
+                </div>
+
+                <!-- Oven Cleaner -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/OV.png" alt="Oven Cleaner">
+                    </div>
+                    <h3>Oven Cleaner</h3>
+                    <p>Powerful oven cleaner that removes baked-on grease, grime, and carbon deposits.</p>
+                    <div class="price">R129.99</div>
+                    <button class="btn-add" onclick="addToCart('Oven Cleaner', 129.99)">Add to Cart</button>
+                </div>
+
+                <!-- Heavy Duty Degreaser -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/DG.png" alt="Heavy Duty Degreaser">
+                    </div>
+                    <h3>Heavy Duty Degreaser</h3>
+                    <p>Removes tough dirt, grease, and grime. Perfect for kitchens, stoves, and industrial surfaces. 1 Litre.</p>
+                    <div class="price">R179.99</div>
+                    <button class="btn-add" onclick="addToCart('Heavy Duty Degreaser', 179.99)">Add to Cart</button>
+                </div>
+
+                <!-- Pine Gel -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/PG.png" alt="Pine Gel">
+                    </div>
+                    <h3>Pine Gel Multi-Purpose Cleaner</h3>
+                    <p>For baths, floors, and kennels. Kills germs and eliminates bad smells. Fresh pine scent. 1kg.</p>
+                    <div class="price">R79.99</div>
+                    <button class="btn-add" onclick="addToCart('Pine Gel', 79.99)">Add to Cart</button>
+                </div>
+
+                <!-- Handy Clean -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/HC.png" alt="Handy Clean">
+                    </div>
+                    <h3>Handy Clean</h3>
+                    <p>Double strength cleaner that removes 99.9% of dirt with brightening action. 1 Litre.</p>
+                    <div class="price">R149.99</div>
+                    <button class="btn-add" onclick="addToCart('Handy Clean', 149.99)">Add to Cart</button>
+                </div>
+
+                <!-- Dish Washing Liquid -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/DW.png" alt="Dish Washing Liquid">
+                    </div>
+                    <h3>Dish Washing Liquid</h3>
+                    <p>100% Lemon formula. Cuts through grease and leaves dishes sparkling clean. 1 Litre.</p>
+                    <div class="price">R69.99</div>
+                    <button class="btn-add" onclick="addToCart('Dish Washing Liquid', 69.99)">Add to Cart</button>
+                </div>
+
+                <!-- Tile Cleaner -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/TC.png" alt="Tile Cleaner">
+                    </div>
+                    <h3>Tile Cleaner</h3>
+                    <p>Removes oil, grease, and fat. Tough on dirt, safe for floors. 1 Litre.</p>
+                    <div class="price">R99.99</div>
+                    <button class="btn-add" onclick="addToCart('Tile Cleaner', 99.99)">Add to Cart</button>
+                </div>
+
+                <!-- Furniture Polish -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/FP.png" alt="Furniture Polish">
+                    </div>
+                    <h3>Furniture Polish</h3>
+                    <p>Instant effect. Perfect for car interiors and household furniture. Restores and protects.</p>
+                    <div class="price">R89.99</div>
+                    <button class="btn-add" onclick="addToCart('Furniture Polish', 89.99)">Add to Cart</button>
+                </div>
+
+                <!-- Wash & Wax -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/CW.png" alt="Wash & Wax">
+                    </div>
+                    <h3>Wash & Wax</h3>
+                    <p>Long-lasting shine, restores paint color. Fast and easy to apply. 1 Litre.</p>
+                    <div class="price">R129.99</div>
+                    <button class="btn-add" onclick="addToCart('Wash & Wax', 129.99)">Add to Cart</button>
+                </div>
+
+                <!-- Dashboard Polish -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/DP.png" alt="Dashboard Polish">
+                    </div>
+                    <h3>Dashboard Polish</h3>
+                    <p>Renews, shines, and protects rubber, vinyl, leather, and plastic. 500ml.</p>
+                    <div class="price">R79.99</div>
+                    <button class="btn-add" onclick="addToCart('Dashboard Polish', 79.99)">Add to Cart</button>
+                </div>
+
+                <!-- Premium Dish Washing Liquid - Bio Citrus -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/ODW.png" alt="Premium Dish Washing Liquid - Bio Citrus">
+                    </div>
+                    <h3>Dish Washing Liquid - Bio Citrus</h3>
+                    <p>Premium detergent with plant extracts. Fully biodegradable, triple concentrate formula. Fresh citrus scent. 1 Litre.</p>
+                    <div class="price">R79.99</div>
+                    <button class="btn-add" onclick="addToCart('Premium Dish Liquid Bio Citrus', 79.99)">Add to Cart</button>
+                </div>
+                <!-- Window Cleaner -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/WC.png" alt="Window Cleaner">
+                    </div>
+                    <h3>Window Cleaner</h3>
+                    <p>Removes heavy dirt, leaves no streaks. Use neat or dilute 1:10. 1 Litre.</p>
+                    <div class="price">R69.99</div>
+                    <button class="btn-add" onclick="addToCart('Window Cleaner', 69.99)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong> <span id="cartTotal">R0.00</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">Place Order</button>
+        </div>
+    </div>
+
+    <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Aseptiq Products RSA</h2>
+            <div class="about-content">
+                <p>Founded in South Africa, Aseptiq Products RSA delivers high-quality cleaning solutions for homes and businesses.</p>
+                <div class="features">
+                    <div class="feature"><h3>✓ Eco-Friendly</h3><p>Biodegradable and safe</p></div>
+                    <div class="feature"><h3>✓ Made in RSA</h3><p>Locally manufactured</p></div>
+                    <div class="feature"><h3>✓ Professional Grade</h3><p>Trusted by professionals</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Elegant -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Connect With Us</h3>
+                    <p>📞 <strong>Phone</strong><br>+27 (0) 67 739 6525</p>
+                    <p>📱 <strong>WhatsApp</strong><br>060 850 6927</p>
+                    <p>✉️ <strong>Email</strong><br>aseptiqproducts@gmail.com</p>
+                    <p>📍 <strong>Visit Our Showroom</strong><br>88 Mmila Road, Soweto, 1868</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Your Full Name" required>
+                    <input type="email" placeholder="Your Email Address" required>
+                    <input type="tel" placeholder="Your Phone Number">
+                    <textarea placeholder="Your Message..." rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message ✨</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aseptiq Products RSA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/ai-assistant.js"></script>
+</body>
+</html>
