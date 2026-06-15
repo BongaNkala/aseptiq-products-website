@@ -3,77 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aseptiq Products RSA - Combo Deals & Bundles</title>
+    <title>Aseptiq Products RSA - Combo Deals</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/ai-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .combo-header {
             text-align: center;
-            padding: 60px 0 30px;
+            padding: 80px 0 50px;
             background: linear-gradient(135deg, #0A2540 0%, #1A5F7A 100%);
             color: white;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .combo-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" d="M10 10 L90 10 M10 20 L90 20 M10 30 L90 30 M10 40 L90 40 M10 50 L90 50 M10 60 L90 60 M10 70 L90 70 M10 80 L90 80 M10 90 L90 90 M10 10 L10 90 M20 10 L20 90 M30 10 L30 90 M40 10 L40 90 M50 10 L50 90 M60 10 L60 90 M70 10 L70 90 M80 10 L80 90 M90 10 L90 90"/></svg>');
+            background-repeat: repeat;
+            opacity: 0.1;
         }
         .combo-header h1 {
-            font-size: 48px;
+            font-size: 56px;
             font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 15px;
+            position: relative;
+            animation: fadeInDown 0.8s ease;
         }
         .combo-header p {
             font-size: 18px;
-            margin-top: 10px;
+            opacity: 0.9;
+            position: relative;
+            animation: fadeInUp 0.8s ease;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .combo-badge {
             background: linear-gradient(135deg, #FF6B35, #FF8C42);
             color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
+            padding: 6px 14px;
+            border-radius: 25px;
             font-size: 12px;
             font-weight: bold;
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 15px;
+            left: 15px;
             z-index: 1;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
         .savings {
             color: #FF6B35;
             font-size: 14px;
             font-weight: bold;
-            margin-top: 5px;
+            margin-top: 8px;
+            padding: 5px 10px;
+            background: rgba(255,107,53,0.1);
+            border-radius: 8px;
+            display: inline-block;
         }
-        .original-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 14px;
-            margin-right: 10px;
-        }
-        .combo-features {
+        .combo-list {
             list-style: none;
             padding: 0;
-            margin: 15px 0;
+            margin: 20px 0;
+            text-align: left;
         }
-        .combo-features li {
-            font-size: 12px;
-            padding: 5px 0;
+        .combo-list li {
+            font-size: 13px;
+            padding: 8px 0;
             color: #555;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            border-bottom: 1px solid #f0f0f0;
         }
-        .combo-features li::before {
+        .combo-list li:last-child {
+            border-bottom: none;
+        }
+        .combo-list li::before {
             content: "✓";
             color: #1A5F7A;
             font-weight: bold;
+            font-size: 14px;
+            background: rgba(26,95,122,0.1);
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
         }
-        .bundle-save {
-            background: #1A5F7A;
+        .coming-soon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
+            padding: 8px 16px;
+            border-radius: 25px;
             font-size: 12px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 10px;
+            margin: 10px 0;
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        .product-image {
+            background: linear-gradient(135deg, #f5f5f5, #ffffff);
+            padding: 20px;
+            border-radius: 15px;
         }
     </style>
 </head>
@@ -108,190 +180,52 @@
     </header>
 
     <div class="combo-header">
-        <h1>🔥 Combo Deals & Bundles 🔥</h1>
-        <p>Save more when you buy together! Up to 30% off on selected bundles</p>
+        <h1>🔥 Exclusive Combo Deals 🔥</h1>
+        <p>Save big with our carefully curated bundles | Limited time offers</p>
     </div>
 
     <section class="products">
         <div class="container">
             <div class="product-grid">
-                <!-- Kitchen Care Combo -->
+                <!-- Combo 1 - Ultimate Home Care -->
                 <div class="product-card" style="position: relative;">
-                    <div class="combo-badge">SAVE 15%</div>
+                    <div class="combo-badge">⭐ BEST VALUE ⭐</div>
                     <div class="product-image">
-                        <img src="images/DG.png" alt="Kitchen Care Combo" style="height: 200px; object-fit: contain;">
+                        <img src="images/Combo1.png" alt="Ultimate Home Care Combo" style="height: 250px; object-fit: contain;">
                     </div>
-                    <h3>🍳 Kitchen Care Combo</h3>
-                    <p>Complete kitchen cleaning solution</p>
-                    <ul class="combo-features">
-                        <li>Heavy Duty Degreaser (1L)</li>
-                        <li>Oven Cleaner (1L)</li>
-                        <li>Dish Washing Liquid (1L)</li>
+                    <h3>🏆 Ultimate Home Care Combo</h3>
+                    <p>Complete cleaning solution for your entire home</p>
+                    <ul class="combo-list">
+                        <li>🧼 Handy Clean Liquid - 1L</li>
+                        <li>🍽️ Dish Washing Liquid - 1L</li>
+                        <li>🌲 Pine Gel Multi-Purpose Cleaner - 1L</li>
+                        <li>💧 Bleach Liquid - 1L</li>
+                        <li>🍋 Dish Washing Liquid (Bonus) - 1L</li>
                     </ul>
-                    <div class="bundle-save">Bundle & Save!</div>
-                    <div class="price">R349.99</div>
-                    <div class="savings">
-                        <span class="original-price">R409.97</span>
-                        Save R59.98
-                    </div>
-                    <button class="btn-add" onclick="addToCart('Kitchen Care Combo', 349.99)">Add Bundle to Cart</button>
+                    <div class="price">R299.99</div>
+                    <div class="savings">💰 Save R100 when buying together!</div>
+                    <button class="btn-add" onclick="addToCart('Ultimate Home Care Combo', 299.99)">🛒 Add Combo to Cart</button>
                 </div>
 
-                <!-- Car Care Combo -->
+                <!-- Combo 2 - Coming Soon -->
                 <div class="product-card" style="position: relative;">
-                    <div class="combo-badge">SAVE 20%</div>
+                    <div class="combo-badge" style="background: linear-gradient(135deg, #667eea, #764ba2);">🚗 PREMIUM</div>
                     <div class="product-image">
-                        <img src="images/CW.png" alt="Car Care Combo" style="height: 200px; object-fit: contain;">
+                        <img src="images/Combo2.jpg" alt="Mobile Garden Scent Combo" style="height: 250px; object-fit: contain;">
                     </div>
-                    <h3>🚗 Car Care Combo</h3>
-                    <p>Complete car detailing solution</p>
-                    <ul class="combo-features">
-                        <li>Wash & Wax (1L)</li>
-                        <li>Dashboard Polish (500ml)</li>
-                        <li>Window Cleaner (1L)</li>
+                    <h3>💎 Mobile Garden Scent Combo</h3>
+                    <p>Essential cleaning, wax, and scent bundle for a fresh car</p>
+                    <ul class="combo-list">
+                        <li>🚗 Car Wash & Wax - 1L</li>
+                        <li>✨ Dashboard Polish - 500ml</li>
+                        <li>🌸 Air Freshener - Garden Scent</li>
+                        <li>🧽 Microfiber Cloth Set</li>
+                        <li>💎 Premium Car Scent</li>
                     </ul>
-                    <div class="bundle-save">Bundle & Save!</div>
-                    <div class="price">R249.99</div>
-                    <div class="savings">
-                        <span class="original-price">R309.97</span>
-                        Save R59.98
-                    </div>
-                    <button class="btn-add" onclick="addToCart('Car Care Combo', 249.99)">Add Bundle to Cart</button>
-                </div>
-
-                <!-- Home Cleaning Combo -->
-                <div class="product-card" style="position: relative;">
-                    <div class="combo-badge">SAVE 25%</div>
-                    <div class="product-image">
-                        <img src="images/TC.png" alt="Home Cleaning Combo" style="height: 200px; object-fit: contain;">
-                    </div>
-                    <h3>🏠 Home Cleaning Combo</h3>
-                    <p>Complete home care solution</p>
-                    <ul class="combo-features">
-                        <li>Tile Cleaner (1L)</li>
-                        <li>Pine Gel (1kg)</li>
-                        <li>Handy Clean (1L)</li>
-                    </ul>
-                    <div class="bundle-save">Bundle & Save!</div>
-                    <div class="price">R279.99</div>
-                    <div class="savings">
-                        <span class="original-price">R369.97</span>
-                        Save R89.98
-                    </div>
-                    <button class="btn-add" onclick="addToCart('Home Cleaning Combo', 279.99)">Add Bundle to Cart</button>
-                </div>
-
-                <!-- Industrial Strength Combo -->
-                <div class="product-card" style="position: relative;">
-                    <div class="combo-badge">SAVE 30%</div>
-                    <div class="product-image">
-                        <img src="images/DG.png" alt="Industrial Combo" style="height: 200px; object-fit: contain;">
-                    </div>
-                    <h3>🏭 Industrial Strength Combo</h3>
-                    <p>For heavy-duty cleaning needs</p>
-                    <ul class="combo-features">
-                        <li>Heavy Duty Degreaser (5L)</li>
-                        <li>Industrial Degreaser (1L)</li>
-                        <li>Tile Cleaner (1L)</li>
-                    </ul>
-                    <div class="bundle-save">Best Value!</div>
-                    <div class="price">R699.99</div>
-                    <div class="savings">
-                        <span class="original-price">R999.97</span>
-                        Save R299.98
-                    </div>
-                    <button class="btn-add" onclick="addToCart('Industrial Strength Combo', 699.99)">Add Bundle to Cart</button>
-                </div>
-
-                <!-- Complete Car Detail Combo -->
-                <div class="product-card" style="position: relative;">
-                    <div class="combo-badge">BEST VALUE</div>
-                    <div class="product-image">
-                        <img src="images/DP.png" alt="Complete Car Combo" style="height: 200px; object-fit: contain;">
-                    </div>
-                    <h3>✨ Complete Car Detail Combo</h3>
-                    <p>Premium car care collection</p>
-                    <ul class="combo-features">
-                        <li>Wash & Wax (1L)</li>
-                        <li>Dashboard Polish (500ml)</li>
-                        <li>Window Cleaner (1L)</li>
-                        <li>Furniture Polish (500ml)</li>
-                    </ul>
-                    <div class="bundle-save">Premium Bundle</div>
-                    <div class="price">R329.99</div>
-                    <div class="savings">
-                        <span class="original-price">R399.96</span>
-                        Save R69.97
-                    </div>
-                    <button class="btn-add" onclick="addToCart('Complete Car Detail Combo', 329.99)">Add Bundle to Cart</button>
-                </div>
-
-                <!-- Eco-Friendly Combo -->
-                <div class="product-card" style="position: relative;">
-                    <div class="combo-badge">ECO DEAL</div>
-                    <div class="product-image">
-                        <img src="images/ODW.png" alt="Eco Combo" style="height: 200px; object-fit: contain;">
-                    </div>
-                    <h3>🌿 Eco-Friendly Combo</h3>
-                    <p>Green cleaning solution</p>
-                    <ul class="combo-features">
-                        <li>Premium Dish Liquid Bio Citrus (1L)</li>
-                        <li>Pine Gel (1kg)</li>
-                        <li>Handy Clean (1L)</li>
-                    </ul>
-                    <div class="bundle-save">Eco Choice</div>
-                    <div class="price">R259.99</div>
-                    <div class="savings">
-                        <span class="original-price">R309.97</span>
-                        Save R49.98
-                    </div>
-                    <button class="btn-add" onclick="addToCart('Eco-Friendly Combo', 259.99)">Add Bundle to Cart</button>
-                </div>
-
-                <!-- Bathroom Care Combo -->
-                <div class="product-card" style="position: relative;">
-                    <div class="combo-badge">SAVE 20%</div>
-                    <div class="product-image">
-                        <img src="images/TC.png" alt="Bathroom Combo" style="height: 200px; object-fit: contain;">
-                    </div>
-                    <h3>🚽 Bathroom Care Combo</h3>
-                    <p>Keep your bathroom sparkling clean</p>
-                    <ul class="combo-features">
-                        <li>Tile Cleaner (1L)</li>
-                        <li>Pine Gel (1kg)</li>
-                        <li>Window Cleaner (500ml)</li>
-                    </ul>
-                    <div class="bundle-save">Bundle & Save!</div>
-                    <div class="price">R199.99</div>
-                    <div class="savings">
-                        <span class="original-price">R249.97</span>
-                        Save R49.98
-                    </div>
-                    <button class="btn-add" onclick="addToCart('Bathroom Care Combo', 199.99)">Add Bundle to Cart</button>
-                </div>
-
-                <!-- Ultimate Cleaning Combo -->
-                <div class="product-card" style="position: relative;">
-                    <div class="combo-badge">ULTIMATE</div>
-                    <div class="product-image">
-                        <img src="images/AP.png" alt="Ultimate Combo" style="height: 200px; object-fit: contain;">
-                    </div>
-                    <h3>💎 Ultimate Cleaning Combo</h3>
-                    <p>Everything you need for a clean home</p>
-                    <ul class="combo-features">
-                        <li>Aluminium Polish/Wax (1L)</li>
-                        <li>Heavy Duty Degreaser (1L)</li>
-                        <li>Tile Cleaner (1L)</li>
-                        <li>Pine Gel (1kg)</li>
-                        <li>Handy Clean (1L)</li>
-                    </ul>
-                    <div class="bundle-save">Mega Bundle</div>
-                    <div class="price">R699.99</div>
-                    <div class="savings">
-                        <span class="original-price">R879.95</span>
-                        Save R179.96
-                    </div>
-                    <button class="btn-add" onclick="addToCart('Ultimate Cleaning Combo', 699.99)">Add Bundle to Cart</button>
+                    <div class="coming-soon">🎯 COMING SOON!</div>
+                    <div class="price" style="color: #999;">R299.99</div>
+                    <div class="savings" style="background: rgba(102,126,234,0.1);">✨ Save R80 - Launching Soon!</div>
+                    <button class="btn-add" style="background: #ccc; cursor: not-allowed;" disabled>📅 Notify Me</button>
                 </div>
             </div>
         </div>
@@ -299,7 +233,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Aseptiq Products RSA. All rights reserved.</p>
+            <p>&copy; 2024 Aseptiq Products RSA. All rights reserved. | Premium Cleaning Solutions for South Africa</p>
         </div>
     </footer>
 
