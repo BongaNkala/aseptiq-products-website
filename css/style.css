@@ -4438,3 +4438,36 @@ header .container {
         font-size: 14px;
     }
 }
+
+/* Size buttons styling for all products */
+.product-sizes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.size-btn {
+    background: rgba(26, 95, 122, 0.1);
+    border: 1px solid #1A5F7A;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s;
+    color: #1A5F7A;
+}
+
+.size-btn:hover {
+    background: #1A5F7A;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.size-btn.active {
+    background: #1A5F7A;
+    color: white;
+    border-color: #1A5F7A;
+    box-shadow: 0 2px 8px rgba(26, 95, 122, 0.3);
+}

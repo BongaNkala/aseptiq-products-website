@@ -241,3 +241,39 @@ if (typeof window.currentAluminiumPrice === 'undefined') {
     window.currentAluminiumPrice = 349.99;
     window.currentAluminiumSize = '1 Litre';
 }
+
+// Size variables for all products
+let currentProductSizes = {};
+
+// Generic function to handle size selection for any product
+function selectProductSize(productId, price, size, button, originalPriceId) {
+    // Remove active class from all size buttons for this product
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    
+    // Add active class to clicked button
+    button.classList.add('active');
+    
+    // Update price display
+    const priceDiv = parentCard.querySelector('.price');
+    if (priceDiv) {
+        priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    }
+    
+    // Store current selection
+    currentProductSizes[productId] = { price: price, size: size };
+}
+
+// Modified add to cart that checks for size
+function addToCartWithSizeCheck(productName, basePrice, productId) {
+    let finalPrice = basePrice;
+    let sizeSuffix = "";
+    
+    if (currentProductSizes[productId]) {
+        finalPrice = currentProductSizes[productId].price;
+        sizeSuffix = ` (${currentProductSizes[productId].size})`;
+    }
+    
+    addToCart(`${productName}${sizeSuffix}`, finalPrice);
+}
