@@ -8,37 +8,122 @@
     <link rel="stylesheet" href="css/ai-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .special-badge {
-            background: linear-gradient(135deg, #E63946, #FF6B6B);
+        .specials-header {
+            text-align: center;
+            padding: 80px 0 50px;
+            background: linear-gradient(135deg, #0A2540 0%, #1A5F7A 100%);
             color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .specials-header::before {
+            content: '';
             position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" d="M10 10 L90 10 M10 20 L90 20 M10 30 L90 30 M10 40 L90 40 M10 50 L90 50 M10 60 L90 60 M10 70 L90 70 M10 80 L90 80 M10 90 L90 90 M10 10 L10 90 M20 10 L20 90 M30 10 L30 90 M40 10 L40 90 M50 10 L50 90 M60 10 L60 90 M70 10 L70 90 M80 10 L80 90 M90 10 L90 90"/></svg>');
+            background-repeat: repeat;
+            opacity: 0.1;
+        }
+        .specials-header h1 {
+            font-size: 56px;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 15px;
+            position: relative;
+            animation: fadeInDown 0.8s ease;
+        }
+        .specials-header p {
+            font-size: 18px;
+            opacity: 0.9;
+            position: relative;
+            animation: fadeInUp 0.8s ease;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .coming-soon-card {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.02); }
         }
-        .discount {
-            color: #E63946;
-            font-size: 14px;
-            font-weight: bold;
-            margin-top: 5px;
+        .coming-soon-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
         }
-        .countdown {
-            background: #1A5F7A;
+        .coming-soon-title {
+            font-size: 36px;
+            color: #1A5F7A;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 15px;
+        }
+        .coming-soon-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .notify-btn {
+            background: linear-gradient(135deg, #1A5F7A, #2E8B9E);
             color: white;
-            padding: 5px 10px;
-            border-radius: 10px;
-            font-size: 11px;
-            margin-top: 10px;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .notify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26,95,122,0.3);
+        }
+        .features-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        .feature-item {
             text-align: center;
+            padding: 20px;
+        }
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .feature-text {
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
@@ -72,108 +157,35 @@
         </div>
     </header>
 
+    <div class="specials-header">
+        <h1>🎉 Spring Cleaning Specials 🎉</h1>
+        <p>Exciting offers coming your way!</p>
+    </div>
+
     <section class="products">
         <div class="container">
-            <h2 class="section-title">🎉 Weekly Specials 🎉</h2>
-            <p style="text-align: center; margin-bottom: 40px;">Limited time offers! Get these deals while stocks last.</p>
-            <div class="product-grid">
-                <!-- Special 1 -->
-                <div class="product-card" style="position: relative;">
-                    <div class="special-badge">-30% OFF</div>
-                    <div class="product-image">
-                        <img src="images/AP.png" alt="Aluminium Polish" style="height: 200px; object-fit: contain;">
+            <div class="coming-soon-card">
+                <div class="coming-soon-icon">🌸</div>
+                <h2 class="coming-soon-title">Spring Cleaning Specials</h2>
+                <p class="coming-soon-text">
+                    Get ready for amazing deals on our premium cleaning products!<br>
+                    Spring Cleaning Specials will be dropping soon.
+                </p>
+                <button class="notify-btn" onclick="alert('Thank you! We will notify you when Spring Cleaning Specials launch. 📧')">📧 Notify Me When Available</button>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-text">Up to 50% Off</div>
                     </div>
-                    <h3>Aluminium Polish/Wax</h3>
-                    <p>1 Litre - Restores faded aluminium surfaces</p>
-                    <div class="price">R244.99</div>
-                    <div class="discount">
-                        <span class="original-price">R349.99</span>
-                        Save R105.00
+                    <div class="feature-item">
+                        <div class="feature-icon">🚚</div>
+                        <div class="feature-text">Free Delivery</div>
                     </div>
-                    <div class="countdown">⏰ Offer ends in 7 days</div>
-                    <button class="btn-add" onclick="addToCart('Aluminium Polish/Wax - SPECIAL', 244.99)">Buy Now</button>
-                </div>
-
-                <!-- Special 2 -->
-                <div class="product-card" style="position: relative;">
-                    <div class="special-badge">-25% OFF</div>
-                    <div class="product-image">
-                        <img src="images/DG.png" alt="Degreaser" style="height: 200px; object-fit: contain;">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎁</div>
+                        <div class="feature-text">Free Gifts</div>
                     </div>
-                    <h3>Heavy Duty Degreaser</h3>
-                    <p>1 Litre - Industrial strength formula</p>
-                    <div class="price">R134.99</div>
-                    <div class="discount">
-                        <span class="original-price">R179.99</span>
-                        Save R45.00
-                    </div>
-                    <div class="countdown">⏰ Offer ends in 5 days</div>
-                    <button class="btn-add" onclick="addToCart('Heavy Duty Degreaser - SPECIAL', 134.99)">Buy Now</button>
-                </div>
-
-                <!-- Special 3 -->
-                <div class="product-card" style="position: relative;">
-                    <div class="special-badge">-20% OFF</div>
-                    <div class="product-image">
-                        <img src="images/ODW.png" alt="Premium Dish Liquid" style="height: 200px; object-fit: contain;">
-                    </div>
-                    <h3>Premium Dish Liquid - Bio Citrus</h3>
-                    <p>1 Litre - Eco-friendly formula</p>
-                    <div class="price">R63.99</div>
-                    <div class="discount">
-                        <span class="original-price">R79.99</span>
-                        Save R16.00
-                    </div>
-                    <div class="countdown">⏰ Offer ends in 10 days</div>
-                    <button class="btn-add" onclick="addToCart('Premium Dish Liquid - SPECIAL', 63.99)">Buy Now</button>
-                </div>
-
-                <!-- Special 4 -->
-                <div class="product-card" style="position: relative;">
-                    <div class="special-badge">BUY 2 GET 1 FREE</div>
-                    <div class="product-image">
-                        <img src="images/HC.png" alt="Handy Clean" style="height: 200px; object-fit: contain;">
-                    </div>
-                    <h3>Handy Clean</h3>
-                    <p>1 Litre - Double strength cleaner</p>
-                    <div class="price">R299.98</div>
-                    <div class="discount">Buy 2, Get 1 FREE (Save R149.99)</div>
-                    <div class="countdown">⏰ Limited stock available</div>
-                    <button class="btn-add" onclick="addToCart('Handy Clean - B2G1 Deal', 299.98)">Claim Deal</button>
-                </div>
-
-                <!-- Special 5 -->
-                <div class="product-card" style="position: relative;">
-                    <div class="special-badge">FLASH SALE</div>
-                    <div class="product-image">
-                        <img src="images/CW.png" alt="Wash & Wax" style="height: 200px; object-fit: contain;">
-                    </div>
-                    <h3>Wash & Wax</h3>
-                    <p>1 Litre - Long-lasting car shine</p>
-                    <div class="price">R90.99</div>
-                    <div class="discount">
-                        <span class="original-price">R129.99</span>
-                        Save R39.00
-                    </div>
-                    <div class="countdown">⏰ 48 HOURS ONLY!</div>
-                    <button class="btn-add" onclick="addToCart('Wash & Wax - FLASH SALE', 90.99)">Buy Now</button>
-                </div>
-
-                <!-- Special 6 -->
-                <div class="product-card" style="position: relative;">
-                    <div class="special-badge">-15% OFF</div>
-                    <div class="product-image">
-                        <img src="images/OV.png" alt="Oven Cleaner" style="height: 200px; object-fit: contain;">
-                    </div>
-                    <h3>Oven Cleaner</h3>
-                    <p>1 Litre - Removes baked-on grease</p>
-                    <div class="price">R110.49</div>
-                    <div class="discount">
-                        <span class="original-price">R129.99</span>
-                        Save R19.50
-                    </div>
-                    <div class="countdown">⏰ Offer ends in 3 days</div>
-                    <button class="btn-add" onclick="addToCart('Oven Cleaner - SPECIAL', 110.49)">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -181,7 +193,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Aseptiq Products RSA. All rights reserved.</p>
+            <p>&copy; 2024 Aseptiq Products RSA. All rights reserved. | Premium Cleaning Solutions for South Africa</p>
         </div>
     </footer>
 
