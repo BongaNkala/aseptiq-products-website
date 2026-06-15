@@ -3,56 +3,245 @@ let cart = [];
 let cartCount = 0;
 let cartTotal = 0;
 
-// Aluminium product size variables
+// Size variables for all products
 let currentAluminiumPrice = 349.99;
 let currentAluminiumSize = "1 Litre";
 
-// Function to select aluminium size
+let currentOvenPrice = 129.99;
+let currentOvenSize = "1 Litre";
+
+let currentDegreaserPrice = 179.99;
+let currentDegreaserSize = "1 Litre";
+
+let currentPinePrice = 79.99;
+let currentPineSize = "1kg";
+
+let currentHandyPrice = 149.99;
+let currentHandySize = "1 Litre";
+
+let currentDishPrice = 69.99;
+let currentDishSize = "1 Litre";
+
+let currentTilePrice = 99.99;
+let currentTileSize = "1 Litre";
+
+let currentFurniturePrice = 89.99;
+let currentFurnitureSize = "500ml";
+
+let currentWashPrice = 129.99;
+let currentWashSize = "1 Litre";
+
+let currentDashboardPrice = 79.99;
+let currentDashboardSize = "500ml";
+
+let currentPremiumDishPrice = 79.99;
+let currentPremiumDishSize = "1 Litre";
+
+let currentWindowPrice = 69.99;
+let currentWindowSize = "1 Litre";
+
+// Aluminium size selection
 function selectAluminiumSize(price, size, button) {
-    if (price === 4999.99) {
-        showNotification(`Industrial size 25 Litre selected - R${price.toFixed(2)}`);
-    }
-    // Remove active class from all size buttons
     const parentCard = button.closest('.product-card');
     const allButtons = parentCard.querySelectorAll('.size-btn');
     allButtons.forEach(btn => btn.classList.remove('active'));
-    
-    // Add active class to clicked button
     button.classList.add('active');
-    
-    // Update price display
     const priceDiv = document.getElementById('aluminiumPrice');
-    if (priceDiv) {
-        priceDiv.textContent = `R${price.toFixed(2)}`;
-    }
-    
-    // Update global variables
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
     currentAluminiumPrice = price;
     currentAluminiumSize = size;
 }
 
-// Add to cart with size
+// Oven Cleaner size selection
+function selectOvenSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('ovenPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentOvenPrice = price;
+    currentOvenSize = size;
+}
+
+// Degreaser size selection
+function selectDegreaserSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('degreaserPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentDegreaserPrice = price;
+    currentDegreaserSize = size;
+}
+
+// Pine Gel size selection
+function selectPineSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('pinePrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentPinePrice = price;
+    currentPineSize = size;
+}
+
+// Handy Clean size selection
+function selectHandySize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('handyPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentHandyPrice = price;
+    currentHandySize = size;
+}
+
+// Dish size selection
+function selectDishSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('dishPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentDishPrice = price;
+    currentDishSize = size;
+}
+
+// Tile size selection
+function selectTileSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('tilePrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentTilePrice = price;
+    currentTileSize = size;
+}
+
+// Furniture size selection
+function selectFurnitureSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('furniturePrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentFurniturePrice = price;
+    currentFurnitureSize = size;
+}
+
+// Wash size selection
+function selectWashSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('washPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentWashPrice = price;
+    currentWashSize = size;
+}
+
+// Dashboard size selection
+function selectDashboardSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('dashboardPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentDashboardPrice = price;
+    currentDashboardSize = size;
+}
+
+// Premium Dish size selection
+function selectPremiumDishSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('premiumDishPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentPremiumDishPrice = price;
+    currentPremiumDishSize = size;
+}
+
+// Window size selection
+function selectWindowSize(price, size, button) {
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('windowPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentWindowPrice = price;
+    currentWindowSize = size;
+}
+
+// Add to cart functions
 function addToCartWithSize(productName, price, size) {
-    const productWithSize = `${productName} (${size})`;
-    addToCart(productWithSize, price);
+    addToCart(`${productName} (${size})`, price);
+}
+
+function addToCartWithSizeOven(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+function addToCartWithSizeDegreaser(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+function addToCartWithSizePine(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+function addToCartWithSizeHandy(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+function addToCartWithSizeDish(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+function addToCartWithSizeTile(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+function addToCartWithSizeFurniture(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+function addToCartWithSizeWash(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+function addToCartWithSizeDashboard(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+function addToCartWithSizePremiumDish(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
+}
+
+function addToCartWithSizeWindow(productName, price, size) {
+    addToCart(`${productName} (${size})`, price);
 }
 
 // Original add to cart function
 function addToCart(productName, price) {
     const existingItem = cart.find(item => item.name === productName);
-    
     if (existingItem) {
         existingItem.quantity++;
         existingItem.total = existingItem.quantity * existingItem.price;
     } else {
-        cart.push({
-            name: productName,
-            price: price,
-            quantity: 1,
-            total: price
-        });
+        cart.push({ name: productName, price: price, quantity: 1, total: price });
     }
-    
     updateCart();
     showNotification(`${productName} added to cart!`);
 }
@@ -61,13 +250,10 @@ function addToCart(productName, price) {
 function updateCart() {
     cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartTotal = cart.reduce((sum, item) => sum + item.total, 0);
-    
     const cartCountElement = document.getElementById('cartCount');
     const cartTotalElement = document.getElementById('cartTotal');
-    
     if (cartCountElement) cartCountElement.textContent = cartCount;
     if (cartTotalElement) cartTotalElement.textContent = `R${cartTotal.toFixed(2)}`;
-    
     const cartItemsElement = document.getElementById('cartItems');
     if (cartItemsElement) {
         if (cart.length === 0) {
@@ -75,21 +261,14 @@ function updateCart() {
         } else {
             cartItemsElement.innerHTML = cart.map(item => `
                 <div class="cart-item">
-                    <div>
-                        <strong>${item.name}</strong><br>
-                        R${item.price.toFixed(2)} x ${item.quantity}
-                    </div>
-                    <div>
-                        <strong>R${item.total.toFixed(2)}</strong>
-                        <button onclick="removeFromCart('${item.name}')" style="margin-left: 10px; background: #ff4444; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Remove</button>
-                    </div>
-                </div>
-            `).join('');
+                    <div><strong>${item.name}</strong><br>R${item.price.toFixed(2)} x ${item.quantity}</div>
+                    <div><strong>R${item.total.toFixed(2)}</strong>
+                    <button onclick="removeFromCart('${item.name}')" style="margin-left: 10px; background: #ff4444; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Remove</button></div>
+                </div>`).join('');
         }
     }
 }
 
-// Remove from cart
 function removeFromCart(productName) {
     const index = cart.findIndex(item => item.name === productName);
     if (index !== -1) {
@@ -99,67 +278,28 @@ function removeFromCart(productName) {
     }
 }
 
-// Toggle cart sidebar
 function toggleCart() {
     const sidebar = document.getElementById('cartSidebar');
     const overlay = document.getElementById('cartOverlay');
-    
     if (sidebar) sidebar.classList.toggle('active');
     if (overlay) overlay.classList.toggle('active');
 }
 
-// Place order
 function checkout() {
-    if (cart.length === 0) {
-        alert('Your cart is empty!');
-        return;
-    }
-    
+    if (cart.length === 0) { alert('Your cart is empty!'); return; }
     alert(`Thank you for your order!\nTotal: R${cartTotal.toFixed(2)}\n\nWe will contact you shortly with payment details.`);
     cart = [];
     updateCart();
     toggleCart();
 }
 
-// Show notification
 function showNotification(message) {
     const notification = document.createElement('div');
     notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: #1e5631;
-        color: white;
-        padding: 15px 20px;
-        border-radius: 5px;
-        z-index: 10000;
-        animation: slideIn 0.3s ease-out;
-    `;
-    
+    notification.style.cssText = `position: fixed; top: 20px; right: 20px; background: #1e5631; color: white; padding: 15px 20px; border-radius: 5px; z-index: 10000; animation: slideIn 0.3s ease-out;`;
     document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.style.opacity = '0';
-        setTimeout(() => notification.remove(), 300);
-    }, 3000);
+    setTimeout(() => { notification.style.opacity = '0'; setTimeout(() => notification.remove(), 300); }, 3000);
 }
-
-// Smooth scrolling - DISABLED for navigation links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
 
 // Contact form submission
 const contactForm = document.getElementById('contactForm');
@@ -173,407 +313,7 @@ if (contactForm) {
 
 // Add animation styles
 const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-`;
+style.textContent = `@keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }`;
 document.head.appendChild(style);
 
 console.log('Aseptiq Products RSA website loaded successfully!');
-
-// Updated function to handle size selection with separate price display
-function selectAluminiumSize(price, size, button) {
-    if (price === 4999.99) {
-        showNotification(`Industrial size 25 Litre selected - R${price.toFixed(2)}`);
-    }
-    // Remove active class from all size buttons
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    
-    // Add active class to clicked button
-    button.classList.add('active');
-    
-    // Update price display (separate from size button)
-    const priceDiv = document.getElementById('aluminiumPrice');
-    if (priceDiv) {
-        priceDiv.textContent = `R${price.toFixed(2)}`;
-    }
-    
-    // Update global variables
-    currentAluminiumPrice = price;
-    currentAluminiumSize = size;
-    
-    // Optional: Show feedback
-    showNotification(`Size changed to ${size} - R${price.toFixed(2)}`);
-}
-
-// Fix for size selection - update price display
-function selectAluminiumSize(price, size, button) {
-    if (price === 4999.99) {
-        showNotification(`Industrial size 25 Litre selected - R${price.toFixed(2)}`);
-    }
-    // Remove active class from all size buttons
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    
-    // Add active class to clicked button
-    button.classList.add('active');
-    
-    // Update the price display
-    const priceElement = document.getElementById('aluminiumPrice');
-    if (priceElement) {
-        priceElement.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    // Store current selection for add to cart
-    window.currentAluminiumPrice = price;
-    window.currentAluminiumSize = size;
-    
-    // Show feedback
-    if (typeof showNotification === 'function') {
-        showNotification(`✓ ${size} selected - R${price.toFixed(2)}`);
-    }
-}
-
-// Make sure variables are initialized
-if (typeof window.currentAluminiumPrice === 'undefined') {
-    window.currentAluminiumPrice = 349.99;
-    window.currentAluminiumSize = '1 Litre';
-}
-
-// Size variables for all products
-let currentProductSizes = {};
-
-// Generic function to handle size selection for any product
-function selectProductSize(productId, price, size, button, originalPriceId) {
-    // Remove active class from all size buttons for this product
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    
-    // Add active class to clicked button
-    button.classList.add('active');
-    
-    // Update price display
-    const priceDiv = parentCard.querySelector('.price');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    // Store current selection
-    currentProductSizes[productId] = { price: price, size: size };
-}
-
-// Modified add to cart that checks for size
-function addToCartWithSizeCheck(productName, basePrice, productId) {
-    let finalPrice = basePrice;
-    let sizeSuffix = "";
-    
-    if (currentProductSizes[productId]) {
-        finalPrice = currentProductSizes[productId].price;
-        sizeSuffix = ` (${currentProductSizes[productId].size})`;
-    }
-    
-    addToCart(`${productName}${sizeSuffix}`, finalPrice);
-}
-
-// Industrial size handling
-function selectIndustrialSize(productId, price, size, button) {
-    selectProductSize(productId, price, size, button);
-    if (size === "25 Litre") {
-        showNotification(`🏭 Industrial size ${size} selected - R${price.toFixed(2)}. For bulk orders, contact us for special pricing!`);
-    }
-}
-
-// Oven Cleaner size variables and functions
-let currentOvenPrice = 129.99;
-let currentOvenSize = "1 Litre";
-
-function selectOvenSize(price, size, button) {
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    
-    const priceDiv = document.getElementById('ovenPrice');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    currentOvenPrice = price;
-    currentOvenSize = size;
-}
-
-function addToCartWithSizeOven(productName, price, size) {
-    addToCart(`${productName} (${size})`, price);
-}
-
-// Heavy Duty Degreaser
-let currentDegreaserPrice = 179.99;
-let currentDegreaserSize = "1 Litre";
-
-function selectDegreaserSize(price, size, button) {
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    
-    const priceDiv = document.getElementById('degreaserPrice');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    currentDegreaserPrice = price;
-    currentDegreaserSize = size;
-}
-
-function addToCartWithSizeDegreaser(productName, price, size) {
-    addToCart(`${productName} (${size})`, price);
-}
-
-// Pine Gel
-let currentPinePrice = 79.99;
-let currentPineSize = "1kg";
-
-function selectPineSize(price, size, button) {
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    
-    const priceDiv = document.getElementById('pinePrice');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    currentPinePrice = price;
-    currentPineSize = size;
-}
-
-function addToCartWithSizePine(productName, price, size) {
-    addToCart(`${productName} (${size})`, price);
-}
-
-// Handy Clean
-let currentHandyPrice = 149.99;
-let currentHandySize = "1 Litre";
-
-function selectHandySize(price, size, button) {
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    
-    const priceDiv = document.getElementById('handyPrice');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    currentHandyPrice = price;
-    currentHandySize = size;
-}
-
-function addToCartWithSizeHandy(productName, price, size) {
-    addToCart(`${productName} (${size})`, price);
-}
-
-// Dish Washing Liquid
-let currentDishPrice = 69.99;
-let currentDishSize = "1 Litre";
-
-function selectDishSize(price, size, button) {
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    
-    const priceDiv = document.getElementById('dishPrice');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    currentDishPrice = price;
-    currentDishSize = size;
-}
-
-function addToCartWithSizeDish(productName, price, size) {
-    addToCart(`${productName} (${size})`, price);
-}
-
-// Tile Cleaner
-let currentTilePrice = 99.99;
-let currentTileSize = "1 Litre";
-
-function selectTileSize(price, size, button) {
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    
-    const priceDiv = document.getElementById('tilePrice');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    currentTilePrice = price;
-    currentTileSize = size;
-}
-
-function addToCartWithSizeTile(productName, price, size) {
-    addToCart(`${productName} (${size})`, price);
-}
-
-// Furniture Polish
-let currentFurniturePrice = 89.99;
-let currentFurnitureSize = "500ml";
-
-function selectFurnitureSize(price, size, button) {
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    
-    const priceDiv = document.getElementById('furniturePrice');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    currentFurniturePrice = price;
-    currentFurnitureSize = size;
-}
-
-function addToCartWithSizeFurniture(productName, price, size) {
-    addToCart(`${productName} (${size})`, price);
-}
-
-// Wash & Wax
-let currentWashPrice = 129.99;
-let currentWashSize = "1 Litre";
-
-function selectWashSize(price, size, button) {
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    
-    const priceDiv = document.getElementById('washPrice');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    currentWashPrice = price;
-    currentWashSize = size;
-}
-
-function addToCartWithSizeWash(productName, price, size) {
-    addToCart(`${productName} (${size})`, price);
-}
-
-// Dashboard Polish
-let currentDashboardPrice = 79.99;
-let currentDashboardSize = "500ml";
-
-function selectDashboardSize(price, size, button) {
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    
-    const priceDiv = document.getElementById('dashboardPrice');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    currentDashboardPrice = price;
-    currentDashboardSize = size;
-}
-
-function addToCartWithSizeDashboard(productName, price, size) {
-    addToCart(`${productName} (${size})`, price);
-}
-
-// Premium Dish Washing Liquid
-let currentPremiumDishPrice = 79.99;
-let currentPremiumDishSize = "1 Litre";
-
-function selectPremiumDishSize(price, size, button) {
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    
-    const priceDiv = document.getElementById('premiumDishPrice');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    currentPremiumDishPrice = price;
-    currentPremiumDishSize = size;
-}
-
-function addToCartWithSizePremiumDish(productName, price, size) {
-    addToCart(`${productName} (${size})`, price);
-}
-
-// Window Cleaner
-let currentWindowPrice = 69.99;
-let currentWindowSize = "1 Litre";
-
-function selectWindowSize(price, size, button) {
-    const parentCard = button.closest('.product-card');
-    const allButtons = parentCard.querySelectorAll('.size-btn');
-    allButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    
-    const priceDiv = document.getElementById('windowPrice');
-    if (priceDiv) {
-        priceDiv.innerHTML = `R${price.toFixed(2)}`;
-    }
-    
-    currentWindowPrice = price;
-    currentWindowSize = size;
-}
-
-function addToCartWithSizeWindow(productName, price, size) {
-    addToCart(`${productName} (${size})`, price);
-}
-
-
-// Debug function to check links
-document.addEventListener('DOMContentLoaded', function() {
-    const comboLink = document.querySelector('a[href="combos.html"]');
-    const specialsLink = document.querySelector('a[href="specials.html"]');
-    
-    if (comboLink) {
-        comboLink.addEventListener('click', function(e) {
-            console.log('Combo link clicked - navigating to combos.html');
-        });
-    }
-    
-    if (specialsLink) {
-        specialsLink.addEventListener('click', function(e) {
-            console.log('Specials link clicked - navigating to specials.html');
-        });
-    }
-});
-
-// Simple navigation - ensure links work
-document.addEventListener('DOMContentLoaded', function() {
-    // Remove any default click handlers that might interfere
-    const allLinks = document.querySelectorAll('nav a');
-    allLinks.forEach(link => {
-        link.removeAttribute('onclick');
-    });
-    
-    console.log('Navigation ready - links should work normally');
-});
