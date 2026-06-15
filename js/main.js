@@ -9,6 +9,9 @@ let currentAluminiumSize = "1 Litre";
 
 // Function to select aluminium size
 function selectAluminiumSize(price, size, button) {
+    if (price === 4999.99) {
+        showNotification(`Industrial size 25 Litre selected - R${price.toFixed(2)}`);
+    }
     // Remove active class from all size buttons
     const parentCard = button.closest('.product-card');
     const allButtons = parentCard.querySelectorAll('.size-btn');
@@ -188,6 +191,9 @@ console.log('Aseptiq Products RSA website loaded successfully!');
 
 // Updated function to handle size selection with separate price display
 function selectAluminiumSize(price, size, button) {
+    if (price === 4999.99) {
+        showNotification(`Industrial size 25 Litre selected - R${price.toFixed(2)}`);
+    }
     // Remove active class from all size buttons
     const parentCard = button.closest('.product-card');
     const allButtons = parentCard.querySelectorAll('.size-btn');
@@ -212,6 +218,9 @@ function selectAluminiumSize(price, size, button) {
 
 // Fix for size selection - update price display
 function selectAluminiumSize(price, size, button) {
+    if (price === 4999.99) {
+        showNotification(`Industrial size 25 Litre selected - R${price.toFixed(2)}`);
+    }
     // Remove active class from all size buttons
     const parentCard = button.closest('.product-card');
     const allButtons = parentCard.querySelectorAll('.size-btn');
@@ -276,4 +285,12 @@ function addToCartWithSizeCheck(productName, basePrice, productId) {
     }
     
     addToCart(`${productName}${sizeSuffix}`, finalPrice);
+}
+
+// Industrial size handling
+function selectIndustrialSize(productId, price, size, button) {
+    selectProductSize(productId, price, size, button);
+    if (size === "25 Litre") {
+        showNotification(`🏭 Industrial size ${size} selected - R${price.toFixed(2)}. For bulk orders, contact us for special pricing!`);
+    }
 }
