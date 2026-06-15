@@ -145,7 +145,7 @@ function showNotification(message) {
     }, 3000);
 }
 
-// Smooth scrolling for navigation links
+// Smooth scrolling - DISABLED for navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -565,4 +565,15 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Specials link clicked - navigating to specials.html');
         });
     }
+});
+
+// Simple navigation - ensure links work
+document.addEventListener('DOMContentLoaded', function() {
+    // Remove any default click handlers that might interfere
+    const allLinks = document.querySelectorAll('nav a');
+    allLinks.forEach(link => {
+        link.removeAttribute('onclick');
+    });
+    
+    console.log('Navigation ready - links should work normally');
 });
