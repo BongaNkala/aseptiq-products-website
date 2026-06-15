@@ -219,3 +219,8 @@ else if (q.includes('window') || q.includes('glass')) {
     response = `🪟 WINDOW CLEANER - R69.99 (1 Litre)\n\n✨ Features:\n• Removes heavy dirt\n• Leaves no streaks\n\n📝 How to use: Use neat or dilute 1:10 with water. Apply with cloth or newspaper. Wipe dry.`;
 }
 
+
+// Add Premium Dish Washing Liquid to AI responses
+if (q.includes('bio citrus') || (q.includes('dish') && q.includes('premium')) || q.includes('plant extract')) {
+    response = `🍋 PREMIUM DISH WASHING LIQUID - BIO CITRUS - R79.99 (1 Litre)\n\n✨ Features:\n• Contains plant extracts\n• Fully biodegradable\n• Triple concentrate formula\n• Fresh citrus scent\n\n🌿 Eco-friendly and tough on grease\n\n📝 How to use: Apply a small amount to sponge, wash dishes, rinse thoroughly. A little goes a long way!`;
+}
