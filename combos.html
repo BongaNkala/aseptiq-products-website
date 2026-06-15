@@ -120,20 +120,9 @@
             justify-content: center;
             border-radius: 50%;
         }
-        .coming-soon {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block;
-            margin: 10px 0;
-            animation: shimmer 2s infinite;
-        }
-        @keyframes shimmer {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+        .single-combo {
+            max-width: 500px;
+            margin: 0 auto;
         }
         .product-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -180,14 +169,14 @@
     </header>
 
     <div class="combo-header">
-        <h1>🔥 Exclusive Combo Deals 🔥</h1>
-        <p>Save big with our carefully curated bundles | Limited time offers</p>
+        <h1>🔥 Exclusive Combo Deal 🔥</h1>
+        <p>Save big with our carefully curated bundle | Limited time offer</p>
     </div>
 
     <section class="products">
         <div class="container">
-            <div class="product-grid">
-                <!-- Combo 1 - Ultimate Home Care -->
+            <div class="product-grid single-combo">
+                <!-- Ultimate Home Care Combo -->
                 <div class="product-card" style="position: relative;">
                     <div class="combo-badge">⭐ BEST VALUE ⭐</div>
                     <div class="product-image">
@@ -205,27 +194,6 @@
                     <div class="price">R299.99</div>
                     <div class="savings">💰 Save R100 when buying together!</div>
                     <button class="btn-add" onclick="addToCart('Ultimate Home Care Combo', 299.99)">🛒 Add Combo to Cart</button>
-                </div>
-
-                <!-- Combo 2 - Coming Soon -->
-                <div class="product-card" style="position: relative;">
-                    <div class="combo-badge" style="background: linear-gradient(135deg, #667eea, #764ba2);">🚗 PREMIUM</div>
-                    <div class="product-image">
-                        <img src="images/Combo2.jpg" alt="Mobile Garden Scent Combo" style="height: 250px; object-fit: contain;">
-                    </div>
-                    <h3>💎 Mobile Garden Scent Combo</h3>
-                    <p>Essential cleaning, wax, and scent bundle for a fresh car</p>
-                    <ul class="combo-list">
-                        <li>🚗 Car Wash & Wax - 1L</li>
-                        <li>✨ Dashboard Polish - 500ml</li>
-                        <li>🌸 Air Freshener - Garden Scent</li>
-                        <li>🧽 Microfiber Cloth Set</li>
-                        <li>💎 Premium Car Scent</li>
-                    </ul>
-                    <div class="coming-soon">🎯 COMING SOON!</div>
-                    <div class="price" style="color: #999;">R299.99</div>
-                    <div class="savings" style="background: rgba(102,126,234,0.1);">✨ Save R80 - Launching Soon!</div>
-                    <button class="btn-add" style="background: #ccc; cursor: not-allowed;" disabled>📅 Notify Me</button>
                 </div>
             </div>
         </div>
