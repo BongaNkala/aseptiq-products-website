@@ -58,9 +58,9 @@
                     <h3>Aluminium Polish/Wax</h3>
                     <p>Used for faded: Aluminium Windows & Doors | Kingdom Doors | Burglars | Gates.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectAluminiumSize(349.99, '1 Litre', this)">1 Litre</button>
                         <button class="size-btn" onclick="selectAluminiumSize(174.99, '500ml', this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
+                        <button class="size-btn active" onclick="selectAluminiumSize(349.99, '1 Litre', this)">1 Litre</button>
+                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre</button>
                     </div>
                     <div class="price" id="aluminiumPrice">R349.99</div>
                     <button class="btn-add" onclick="addToCartWithSize('Aluminium Polish/Wax', currentAluminiumPrice, currentAluminiumSize)">Add to Cart</button>
@@ -74,12 +74,12 @@
                     <h3>Oven Cleaner</h3>
                     <p>Powerful oven cleaner that removes baked-on grease, grime, and carbon deposits.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectProductSize("ovenPrice", 129.99, "1 Litre", this)">1 Litre</button>
-                        <button class="size-btn" onclick="selectProductSize("ovenPrice", 74.99, "500ml", this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
+                        <button class="size-btn" onclick="selectOvenSize(74.99, '500ml', this)">500ml</button>
+                        <button class="size-btn active" onclick="selectOvenSize(129.99, '1 Litre', this)">1 Litre</button>
+                        <button class="size-btn" onclick="selectOvenSize(2499.99, '25 Litre', this)">25 Litre</button>
                     </div>
                     <div class="price" id="ovenPrice">R129.99</div>
-                    <button class="btn-add" onclick="addToCart('Oven Cleaner', 129.99)">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCartWithSizeOven('Oven Cleaner', currentOvenPrice, currentOvenSize)">Add to Cart</button>
                 </div>
 
                 <!-- Heavy Duty Degreaser -->
@@ -88,14 +88,14 @@
                         <img src="images/DG.png" alt="Heavy Duty Degreaser">
                     </div>
                     <h3>Heavy Duty Degreaser</h3>
-                    <p>Removes tough dirt, grease, and grime. Perfect for kitchens, stoves, and industrial surfaces. 1 Litre.</p>
+                    <p>Removes tough dirt, grease, and grime. Perfect for kitchens, stoves, and industrial surfaces.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectProductSize("degreaserPrice", 179.99, "1 Litre", this)">1 Litre</button>
-                        <button class="size-btn" onclick="selectProductSize("degreaserPrice", 99.99, "500ml", this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
+                        <button class="size-btn" onclick="selectDegreaserSize(99.99, '500ml', this)">500ml</button>
+                        <button class="size-btn active" onclick="selectDegreaserSize(179.99, '1 Litre', this)">1 Litre</button>
+                        <button class="size-btn" onclick="selectDegreaserSize(2999.99, '25 Litre', this)">25 Litre</button>
                     </div>
                     <div class="price" id="degreaserPrice">R179.99</div>
-                    <button class="btn-add" onclick="addToCart('Heavy Duty Degreaser', 179.99)">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCartWithSizeDegreaser('Heavy Duty Degreaser', currentDegreaserPrice, currentDegreaserSize)">Add to Cart</button>
                 </div>
 
                 <!-- Pine Gel -->
@@ -104,14 +104,14 @@
                         <img src="images/PG.png" alt="Pine Gel">
                     </div>
                     <h3>Pine Gel Multi-Purpose Cleaner</h3>
-                    <p>For baths, floors, and kennels. Kills germs and eliminates bad smells. Fresh pine scent. 1kg.</p>
+                    <p>For baths, floors, and kennels. Kills germs and eliminates bad smells. Fresh pine scent.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectProductSize("pinePrice", 79.99, "1kg", this)">1kg</button>
-                        <button class="size-btn" onclick="selectProductSize("pinePrice", 44.99, "500ml", this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
+                        <button class="size-btn" onclick="selectPineSize(44.99, '500ml', this)">500ml</button>
+                        <button class="size-btn active" onclick="selectPineSize(79.99, '1kg', this)">1kg</button>
+                        <button class="size-btn" onclick="selectPineSize(1499.99, '25 Litre', this)">25 Litre</button>
                     </div>
                     <div class="price" id="pinePrice">R79.99</div>
-                    <button class="btn-add" onclick="addToCart('Pine Gel', 79.99)">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCartWithSizePine('Pine Gel', currentPinePrice, currentPineSize)">Add to Cart</button>
                 </div>
 
                 <!-- Handy Clean -->
@@ -120,14 +120,14 @@
                         <img src="images/HC.png" alt="Handy Clean">
                     </div>
                     <h3>Handy Clean</h3>
-                    <p>Double strength cleaner that removes 99.9% of dirt with brightening action. 1 Litre.</p>
+                    <p>Double strength cleaner that removes 99.9% of dirt with brightening action.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectProductSize("handyPrice", 149.99, "1 Litre", this)">1 Litre</button>
-                        <button class="size-btn" onclick="selectProductSize("handyPrice", 84.99, "500ml", this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
+                        <button class="size-btn" onclick="selectHandySize(84.99, '500ml', this)">500ml</button>
+                        <button class="size-btn active" onclick="selectHandySize(149.99, '1 Litre', this)">1 Litre</button>
+                        <button class="size-btn" onclick="selectHandySize(2499.99, '25 Litre', this)">25 Litre</button>
                     </div>
                     <div class="price" id="handyPrice">R149.99</div>
-                    <button class="btn-add" onclick="addToCart('Handy Clean', 149.99)">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCartWithSizeHandy('Handy Clean', currentHandyPrice, currentHandySize)">Add to Cart</button>
                 </div>
 
                 <!-- Dish Washing Liquid -->
@@ -136,14 +136,14 @@
                         <img src="images/DW.png" alt="Dish Washing Liquid">
                     </div>
                     <h3>Dish Washing Liquid</h3>
-                    <p>100% Lemon formula. Cuts through grease and leaves dishes sparkling clean. 1 Litre.</p>
+                    <p>100% Lemon formula. Cuts through grease and leaves dishes sparkling clean.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectProductSize("dishPrice", 69.99, "1 Litre", this)">1 Litre</button>
-                        <button class="size-btn" onclick="selectProductSize("dishPrice", 39.99, "500ml", this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
+                        <button class="size-btn" onclick="selectDishSize(39.99, '500ml', this)">500ml</button>
+                        <button class="size-btn active" onclick="selectDishSize(69.99, '1 Litre', this)">1 Litre</button>
+                        <button class="size-btn" onclick="selectDishSize(1299.99, '25 Litre', this)">25 Litre</button>
                     </div>
                     <div class="price" id="dishPrice">R69.99</div>
-                    <button class="btn-add" onclick="addToCart('Dish Washing Liquid', 69.99)">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCartWithSizeDish('Dish Washing Liquid', currentDishPrice, currentDishSize)">Add to Cart</button>
                 </div>
 
                 <!-- Tile Cleaner -->
@@ -152,14 +152,14 @@
                         <img src="images/TC.png" alt="Tile Cleaner">
                     </div>
                     <h3>Tile Cleaner</h3>
-                    <p>Removes oil, grease, and fat. Tough on dirt, safe for floors. 1 Litre.</p>
+                    <p>Removes oil, grease, and fat. Tough on dirt, safe for floors.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectProductSize("tilePrice", 99.99, "1 Litre", this)">1 Litre</button>
-                        <button class="size-btn" onclick="selectProductSize("tilePrice", 59.99, "500ml", this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
+                        <button class="size-btn" onclick="selectTileSize(59.99, '500ml', this)">500ml</button>
+                        <button class="size-btn active" onclick="selectTileSize(99.99, '1 Litre', this)">1 Litre</button>
+                        <button class="size-btn" onclick="selectTileSize(1899.99, '25 Litre', this)">25 Litre</button>
                     </div>
                     <div class="price" id="tilePrice">R99.99</div>
-                    <button class="btn-add" onclick="addToCart('Tile Cleaner', 99.99)">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCartWithSizeTile('Tile Cleaner', currentTilePrice, currentTileSize)">Add to Cart</button>
                 </div>
 
                 <!-- Furniture Polish -->
@@ -170,12 +170,12 @@
                     <h3>Furniture Polish</h3>
                     <p>Instant effect. Perfect for car interiors and household furniture. Restores and protects.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectProductSize("furniturePrice", 89.99, "500ml", this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
-                        <button class="size-btn" onclick="selectProductSize("furniturePrice", 49.99, "250ml", this)">250ml</button>
+                        <button class="size-btn" onclick="selectFurnitureSize(49.99, '250ml', this)">250ml</button>
+                        <button class="size-btn active" onclick="selectFurnitureSize(89.99, '500ml', this)">500ml</button>
+                        <button class="size-btn" onclick="selectFurnitureSize(1699.99, '25 Litre', this)">25 Litre</button>
                     </div>
                     <div class="price" id="furniturePrice">R89.99</div>
-                    <button class="btn-add" onclick="addToCart('Furniture Polish', 89.99)">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCartWithSizeFurniture('Furniture Polish', currentFurniturePrice, currentFurnitureSize)">Add to Cart</button>
                 </div>
 
                 <!-- Wash & Wax -->
@@ -184,14 +184,14 @@
                         <img src="images/CW.png" alt="Wash & Wax">
                     </div>
                     <h3>Wash & Wax</h3>
-                    <p>Long-lasting shine, restores paint color. Fast and easy to apply. 1 Litre.</p>
+                    <p>Long-lasting shine, restores paint color. Fast and easy to apply.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectProductSize("washwaxPrice", 129.99, "1 Litre", this)">1 Litre</button>
-                        <button class="size-btn" onclick="selectProductSize("washwaxPrice", 74.99, "500ml", this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
+                        <button class="size-btn" onclick="selectWashSize(74.99, '500ml', this)">500ml</button>
+                        <button class="size-btn active" onclick="selectWashSize(129.99, '1 Litre', this)">1 Litre</button>
+                        <button class="size-btn" onclick="selectWashSize(2299.99, '25 Litre', this)">25 Litre</button>
                     </div>
-                    <div class="price" id="washwaxPrice">R129.99</div>
-                    <button class="btn-add" onclick="addToCart('Wash & Wax', 129.99)">Add to Cart</button>
+                    <div class="price" id="washPrice">R129.99</div>
+                    <button class="btn-add" onclick="addToCartWithSizeWash('Wash & Wax', currentWashPrice, currentWashSize)">Add to Cart</button>
                 </div>
 
                 <!-- Dashboard Polish -->
@@ -200,45 +200,46 @@
                         <img src="images/DP.png" alt="Dashboard Polish">
                     </div>
                     <h3>Dashboard Polish</h3>
-                    <p>Renews, shines, and protects rubber, vinyl, leather, and plastic. 500ml.</p>
+                    <p>Renews, shines, and protects rubber, vinyl, leather, and plastic.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectProductSize("dashboardPrice", 79.99, "500ml", this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
-                        <button class="size-btn" onclick="selectProductSize("dashboardPrice", 49.99, "250ml", this)">250ml</button>
+                        <button class="size-btn" onclick="selectDashboardSize(49.99, '250ml', this)">250ml</button>
+                        <button class="size-btn active" onclick="selectDashboardSize(79.99, '500ml', this)">500ml</button>
+                        <button class="size-btn" onclick="selectDashboardSize(1499.99, '25 Litre', this)">25 Litre</button>
                     </div>
                     <div class="price" id="dashboardPrice">R79.99</div>
-                    <button class="btn-add" onclick="addToCart('Dashboard Polish', 79.99)">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCartWithSizeDashboard('Dashboard Polish', currentDashboardPrice, currentDashboardSize)">Add to Cart</button>
                 </div>
 
-                <!-- Premium Dish Washing Liquid - Bio Citrus -->
+                <!-- Premium Dish Washing Liquid -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/ODW.png" alt="Premium Dish Washing Liquid - Bio Citrus">
+                        <img src="images/ODW.png" alt="Premium Dish Washing Liquid">
                     </div>
-                    <h3>Dish Washing Liquid - Bio Citrus</h3>
-                    <p>Premium detergent with plant extracts. Fully biodegradable, triple concentrate formula. Fresh citrus scent. 1 Litre.</p>
+                    <h3>Premium Dish Liquid - Bio Citrus</h3>
+                    <p>Premium detergent with plant extracts. Fully biodegradable, triple concentrate formula.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectProductSize("premiumDishPrice", 79.99, "1 Litre", this)">1 Litre</button>
-                        <button class="size-btn" onclick="selectProductSize("premiumDishPrice", 49.99, "500ml", this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
+                        <button class="size-btn" onclick="selectPremiumDishSize(49.99, '500ml', this)">500ml</button>
+                        <button class="size-btn active" onclick="selectPremiumDishSize(79.99, '1 Litre', this)">1 Litre</button>
+                        <button class="size-btn" onclick="selectPremiumDishSize(1499.99, '25 Litre', this)">25 Litre</button>
                     </div>
                     <div class="price" id="premiumDishPrice">R79.99</div>
-                    <button class="btn-add" onclick="addToCart('Premium Dish Liquid Bio Citrus', 79.99)">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCartWithSizePremiumDish('Premium Dish Liquid Bio Citrus', currentPremiumDishPrice, currentPremiumDishSize)">Add to Cart</button>
                 </div>
+
                 <!-- Window Cleaner -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="images/WC.png" alt="Window Cleaner">
                     </div>
                     <h3>Window Cleaner</h3>
-                    <p>Removes heavy dirt, leaves no streaks. Use neat or dilute 1:10. 1 Litre.</p>
+                    <p>Removes heavy dirt, leaves no streaks. Use neat or dilute 1:10.</p>
                     <div class="product-sizes">
-                        <button class="size-btn active" onclick="selectProductSize("windowPrice", 69.99, "1 Litre", this)">1 Litre</button>
-                        <button class="size-btn" onclick="selectProductSize("windowPrice", 39.99, "500ml", this)">500ml</button>
-                        <button class="size-btn" onclick="selectAluminiumSize(4999.99, '25 Litre', this)">25 Litre - R4,999.99</button>
+                        <button class="size-btn" onclick="selectWindowSize(39.99, '500ml', this)">500ml</button>
+                        <button class="size-btn active" onclick="selectWindowSize(69.99, '1 Litre', this)">1 Litre</button>
+                        <button class="size-btn" onclick="selectWindowSize(1299.99, '25 Litre', this)">25 Litre</button>
                     </div>
                     <div class="price" id="windowPrice">R69.99</div>
-                    <button class="btn-add" onclick="addToCart('Window Cleaner', 69.99)">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCartWithSizeWindow('Window Cleaner', currentWindowPrice, currentWindowSize)">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -276,7 +277,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - Elegant -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
