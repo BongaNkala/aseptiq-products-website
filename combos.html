@@ -61,69 +61,105 @@
                 transform: translateY(0);
             }
         }
-        .coming-soon-card {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 60px 40px;
-            background: linear-gradient(135deg, #fff, #f8f9fa);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .combo-badge {
+            background: linear-gradient(135deg, #FF6B35, #FF8C42);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 1;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             animation: pulse 2s infinite;
+        }
+        .coming-badge {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 1;
         }
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
+            50% { transform: scale(1.05); }
         }
-        .coming-soon-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-        }
-        .coming-soon-title {
-            font-size: 36px;
-            color: #1A5F7A;
-            font-family: 'Cormorant Garamond', serif;
-            margin-bottom: 15px;
-        }
-        .coming-soon-text {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        .notify-btn {
-            background: linear-gradient(135deg, #1A5F7A, #2E8B9E);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
+        .savings {
+            color: #FF6B35;
             font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
+            font-weight: bold;
+            margin-top: 8px;
+            padding: 5px 10px;
+            background: rgba(255,107,53,0.1);
+            border-radius: 8px;
+            display: inline-block;
         }
-        .notify-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(26,95,122,0.3);
+        .combo-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
         }
-        .features-list {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
-        .feature-item {
-            text-align: center;
-            padding: 20px;
-        }
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-        .feature-text {
-            font-size: 14px;
+        .combo-list li {
+            font-size: 13px;
+            padding: 8px 0;
             color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .combo-list li:last-child {
+            border-bottom: none;
+        }
+        .combo-list li::before {
+            content: "✓";
+            color: #1A5F7A;
+            font-weight: bold;
+            font-size: 14px;
+            background: rgba(26,95,122,0.1);
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        .product-image {
+            background: linear-gradient(135deg, #f5f5f5, #ffffff);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .btn-add {
+            margin-top: auto;
+        }
+        .coming-soon-btn {
+            background: #ccc;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .coming-soon-note {
+            font-size: 12px;
+            color: #764ba2;
+            margin-top: 10px;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -158,34 +194,51 @@
     </header>
 
     <div class="combos-header">
-        <h1>🔥 Spring Cleaning Combos 🔥</h1>
-        <p>Amazing bundle deals coming your way!</p>
+        <h1>🔥 Combo Deals 🔥</h1>
+        <p>Save big with our exclusive bundle offers!</p>
     </div>
 
     <section class="products">
         <div class="container">
-            <div class="coming-soon-card">
-                <div class="coming-soon-icon">🌿</div>
-                <h2 class="coming-soon-title">Spring Cleaning Combos</h2>
-                <p class="coming-soon-text">
-                    Get ready for unbeatable bundle deals on our premium cleaning products!<br>
-                    Spring Cleaning Combos will be dropping soon.
-                </p>
-                <button class="notify-btn" onclick="alert('Thank you! We will notify you when Spring Cleaning Combos launch. 📧')">📧 Notify Me When Available</button>
-                
-                <div class="features-list">
-                    <div class="feature-item">
-                        <div class="feature-icon">💝</div>
-                        <div class="feature-text">Bundle & Save</div>
+            <div class="product-grid">
+                <!-- Essentials Combo - Available Now -->
+                <div class="product-card" style="position: relative;">
+                    <div class="combo-badge">⭐ AVAILABLE NOW ⭐</div>
+                    <div class="product-image">
+                        <img src="images/Combo1.png" alt="Essentials Combo" style="height: 250px; object-fit: contain;">
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🚚</div>
-                        <div class="feature-text">Free Delivery</div>
+                    <h3>🏆 Essentials Combo</h3>
+                    <p>Complete cleaning solution for your entire home</p>
+                    <ul class="combo-list">
+                        <li>🧼 Handy Clean Liquid - 1L</li>
+                        <li>🍽️ Dish Washing Liquid - 1L</li>
+                        <li>🌲 Pine Gel Multi-Purpose Cleaner - 1L</li>
+                        <li>💧 Bleach Liquid - 1L</li>
+                        <li>🍋 Dish Washing Liquid (Bonus) - 1L</li>
+                    </ul>
+                    <div class="price">R299.99</div>
+                    <div class="savings">💰 Save R100 when buying together!</div>
+                    <button class="btn-add" onclick="addToCart('Essentials Combo', 299.99)">🛒 Add Combo to Cart</button>
+                </div>
+
+                <!-- Spring Cleaning Combo - Coming Soon -->
+                <div class="product-card" style="position: relative;">
+                    <div class="coming-badge">🌸 COMING SOON</div>
+                    <div class="product-image">
+                        <img src="images/Combo1.png" alt="Spring Cleaning Combo" style="height: 250px; object-fit: contain; opacity: 0.7;">
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🎁</div>
-                        <div class="feature-text">Free Gifts</div>
-                    </div>
+                    <h3>🌿 Spring Cleaning Combo</h3>
+                    <p>Get ready for our amazing spring bundle!</p>
+                    <ul class="combo-list">
+                        <li>✨ Premium cleaning products</li>
+                        <li>🌸 Spring fresh scents</li>
+                        <li>💪 Extra strength formulas</li>
+                        <li>🎁 FREE gift with purchase</li>
+                        <li>🚚 FREE delivery included</li>
+                    </ul>
+                    <div class="price" style="color: #999;">Coming Soon!</div>
+                    <div class="coming-soon-note">📅 Launching this Spring - Be the first to know!</div>
+                    <button class="btn-add coming-soon-btn" disabled>🔔 Notify Me When Available</button>
                 </div>
             </div>
         </div>
