@@ -4702,3 +4702,30 @@ button.size-btn[onclick*="'Sold Out'"]::after {
     font-size: 10px;
     opacity: 0.7;
 }
+
+/* Sold Out Button Styling - Direct class */
+.size-btn.sold-out {
+    background: #f8d7da !important;
+    border-color: #dc3545 !important;
+    color: #dc3545 !important;
+    cursor: not-allowed !important;
+    opacity: 1 !important;
+    position: relative;
+}
+
+.size-btn.sold-out:hover {
+    background: #f5c6cb !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.size-btn.sold-out::after {
+    content: ' ✕';
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Disable pointer events for sold out but keep clickable for alert */
+.size-btn.sold-out {
+    pointer-events: auto;
+}
