@@ -721,3 +721,22 @@ function selectWindowSize(price, size, button) {
     currentWindowPrice = price;
     currentWindowSize = size;
 }
+
+// Function to mark sold out buttons when page loads
+function markSoldOutButtons() {
+    const allSizeButtons = document.querySelectorAll('.size-btn');
+    allSizeButtons.forEach(button => {
+        const onclickAttr = button.getAttribute('onclick');
+        if (onclickAttr && (onclickAttr.includes("'Sold Out'") || onclickAttr.includes('"Sold Out"'))) {
+            button.classList.add('sold-out');
+            button.style.cursor = 'not-allowed';
+        }
+    });
+}
+
+// Run when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', markSoldOutButtons);
+} else {
+    markSoldOutButtons();
+}

@@ -4676,3 +4676,29 @@ nav ul li.has-dropdown:hover > a::after {
         transform: translate(-50%, -50%);
     }
 }
+
+/* Sold Out Button Styling */
+.size-btn.sold-out,
+button.size-btn[onclick*="'Sold Out'"],
+.size-btn:contains("Sold Out") {
+    background: rgba(220, 53, 69, 0.15) !important;
+    border-color: #dc3545 !important;
+    color: #dc3545 !important;
+    cursor: not-allowed !important;
+    opacity: 0.8;
+    position: relative;
+}
+
+.size-btn.sold-out:hover,
+button.size-btn[onclick*="'Sold Out'"]:hover {
+    background: rgba(220, 53, 69, 0.25) !important;
+    transform: none !important;
+}
+
+.size-btn.sold-out::after,
+button.size-btn[onclick*="'Sold Out'"]::after {
+    content: '✕';
+    margin-left: 8px;
+    font-size: 10px;
+    opacity: 0.7;
+}
