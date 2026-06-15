@@ -62,10 +62,10 @@
             }
         }
         .coming-soon-card {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             text-align: center;
-            padding: 60px 40px;
+            padding: 40px;
             background: linear-gradient(135deg, #fff, #f8f9fa);
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -75,12 +75,20 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.02); }
         }
+        .spring-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 30px;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
         .coming-soon-icon {
-            font-size: 80px;
+            font-size: 60px;
             margin-bottom: 20px;
         }
         .coming-soon-title {
-            font-size: 36px;
+            font-size: 32px;
             color: #1A5F7A;
             font-family: 'Cormorant Garamond', serif;
             margin-bottom: 15px;
@@ -125,6 +133,12 @@
             font-size: 14px;
             color: #555;
         }
+        .spring-quote {
+            font-style: italic;
+            color: #1A5F7A;
+            margin: 20px 0;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -158,29 +172,31 @@
     </header>
 
     <div class="specials-header">
-        <h1>🎉 Spring Cleaning Specials 🎉</h1>
-        <p>Exciting offers coming your way!</p>
+        <h1>🎉 Spring Specials 🎉</h1>
+        <p>A curated collection of fresh and uplifting home essentials</p>
     </div>
 
     <section class="products">
         <div class="container">
             <div class="coming-soon-card">
+                <img src="images/SpringSpecials.png" alt="Spring Specials" class="spring-image">
                 <div class="coming-soon-icon">🌸</div>
-                <h2 class="coming-soon-title">Spring Cleaning Specials</h2>
+                <h2 class="coming-soon-title">Spring Collection</h2>
                 <p class="coming-soon-text">
-                    Get ready for amazing deals on our premium cleaning products!<br>
-                    Spring Cleaning Specials will be dropping soon.
+                    A curated collection of fresh and uplifting home essentials.<br>
+                    Get ready to refresh your home this spring with our exclusive specials!
                 </p>
-                <button class="notify-btn" onclick="alert('Thank you! We will notify you when Spring Cleaning Specials launch. 📧')">📧 Notify Me When Available</button>
+                <div class="spring-quote">✨ "A curated collection of fresh and uplifting home essentials" ✨</div>
+                <button class="notify-btn" onclick="alert('Thank you! We will notify you when Spring Specials launch. 📧')">📧 Notify Me When Available</button>
                 
                 <div class="features-list">
                     <div class="feature-item">
-                        <div class="feature-icon">💰</div>
-                        <div class="feature-text">Up to 50% Off</div>
+                        <div class="feature-icon">🌸</div>
+                        <div class="feature-text">Fresh Scents</div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-icon">🚚</div>
-                        <div class="feature-text">Free Delivery</div>
+                        <div class="feature-icon">💚</div>
+                        <div class="feature-text">Eco-Friendly</div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">🎁</div>
