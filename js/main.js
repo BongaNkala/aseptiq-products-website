@@ -317,3 +317,197 @@ style.textContent = `@keyframes slideIn { from { transform: translateX(100%); op
 document.head.appendChild(style);
 
 console.log('Aseptiq Products RSA website loaded successfully!');
+
+// Updated price selection functions with new prices and sold out handling
+
+// Aluminium Polish/Wax
+function selectAluminiumSize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('aluminiumPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentAluminiumPrice = price;
+    currentAluminiumSize = size;
+}
+
+// Oven Cleaner
+function selectOvenSize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('ovenPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentOvenPrice = price;
+    currentOvenSize = size;
+}
+
+// Heavy Duty Degreaser
+function selectDegreaserSize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('degreaserPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentDegreaserPrice = price;
+    currentDegreaserSize = size;
+}
+
+// Pine Gel
+function selectPineSize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('pinePrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentPinePrice = price;
+    currentPineSize = size;
+}
+
+// Handy Clean
+function selectHandySize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('handyPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentHandyPrice = price;
+    currentHandySize = size;
+}
+
+// Dish Washing Liquid
+function selectDishSize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('dishPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentDishPrice = price;
+    currentDishSize = size;
+}
+
+// Tile Cleaner
+function selectTileSize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('tilePrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentTilePrice = price;
+    currentTileSize = size;
+}
+
+// Furniture Polish
+function selectFurnitureSize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('furniturePrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentFurniturePrice = price;
+    currentFurnitureSize = size;
+}
+
+// Wash & Wax
+function selectWashSize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('washPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentWashPrice = price;
+    currentWashSize = size;
+}
+
+// Dashboard Polish
+function selectDashboardSize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('dashboardPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentDashboardPrice = price;
+    currentDashboardSize = size;
+}
+
+// Premium Dish Washing Liquid
+function selectPremiumDishSize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('premiumDishPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentPremiumDishPrice = price;
+    currentPremiumDishSize = size;
+}
+
+// Window Cleaner
+function selectWindowSize(price, size, button) {
+    if (price === 'Sold Out') {
+        alert('Sorry, this size is currently sold out. Please try another size.');
+        return;
+    }
+    const parentCard = button.closest('.product-card');
+    const allButtons = parentCard.querySelectorAll('.size-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const priceDiv = document.getElementById('windowPrice');
+    if (priceDiv) priceDiv.innerHTML = `R${price.toFixed(2)}`;
+    currentWindowPrice = price;
+    currentWindowSize = size;
+}
